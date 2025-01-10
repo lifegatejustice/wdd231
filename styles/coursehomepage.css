@@ -1,175 +1,478 @@
-.poppins-thin {
-    font-family: "Poppins", serif;
-    font-weight: 100;
-    font-style: normal;
-  }
-  
-  .poppins-extralight {
-    font-family: "Poppins", serif;
-    font-weight: 200;
-    font-style: normal;
-  }
-  
-  .poppins-light {
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  .poppins-regular {
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .poppins-medium {
-    font-family: "Poppins", serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .poppins-semibold {
-    font-family: "Poppins", serif;
-    font-weight: 600;
-    font-style: normal;
-  }
-  
-  .poppins-bold {
-    font-family: "Poppins", serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .poppins-extrabold {
-    font-family: "Poppins", serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-  
-  .poppins-black {
-    font-family: "Poppins", serif;
-    font-weight: 900;
-    font-style: normal;
-  }
-  
-  .poppins-thin-italic {
-    font-family: "Poppins", serif;
-    font-weight: 100;
-    font-style: italic;
-  }
-  
-  .poppins-extralight-italic {
-    font-family: "Poppins", serif;
-    font-weight: 200;
-    font-style: italic;
-  }
-  
-  .poppins-light-italic {
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: italic;
-  }
-  
-  .poppins-regular-italic {
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-  
-  .poppins-medium-italic {
-    font-family: "Poppins", serif;
-    font-weight: 500;
-    font-style: italic;
-  }
-  
-  .poppins-semibold-italic {
-    font-family: "Poppins", serif;
-    font-weight: 600;
-    font-style: italic;
-  }
-  
-  .poppins-bold-italic {
-    font-family: "Poppins", serif;
-    font-weight: 700;
-    font-style: italic;
-  }
-  
-  .poppins-extrabold-italic {
-    font-family: "Poppins", serif;
-    font-weight: 800;
-    font-style: italic;
-  }
-  
-  .poppins-black-italic {
-    font-family: "Poppins", serif;
-    font-weight: 900;
-    font-style: italic;
-  }
-
 :root {
-    --primary-color: #004d1a;
-    --secondary-color: #E2DEDE;
-    --accent1-color: #2c5c7d;
-    --accent2-color: #006622; 
-    --heading-font: 'Outfit', serif;
-    --paragraph-font: 'Poppins', sans-serif;
-  
-    --nav-background-color: #003311; 
-    --nav-link-color: #ffffff;
-    --nav-hover-link-color: #ffffff;
-    --nav-hover-background-color: #006622; 
-  }
+  --primary-color: #004d1a;
+  --secondary-color: #e2dede;
+  --accent1-color: #2c5c7d;
+  --accent2-color: #006622;
+  --heading-font: "Outfit", sans-serif;
+  --paragraph-font: "Poppins", sans-serif;
+  --black: #0000;
+  --white: #ffff;
 
-body{
-    font-family: var(--paragraph-font);
+  --nav-background-color: #1e4e6b;
+  --nav-link-color: #ffffff;
+  --nav-hover-link-color: #fcfc05;
+  --nav-hover-background-color: #006622;
+}
+
+body {
+  font-family: var(--paragraph-font);
+  margin: 0;
 }
 
 .header {
-    background-color: #2c5c7d;
+  background-color: var(--nav-background-color);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+section {
+  margin: 2vw;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 30px;
+  text-align: center;
+  border-top-left-radius: 2vw;
+  border-top-right-radius: 2vw;
+}
+
+section h2 {
+  color: var(--white);
+  padding: 2vw;
+  border-top-left-radius: 2vw;
+  border-top-right-radius: 2vw;
+  background-color: var(--nav-background-color);
+}
+
+main {
+  margin: 0;
+}
+
+.header img {
+  width: 100px;
+  margin-right: 20px;
+  box-shadow: 0 0 30px black;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.nav {
+  background-color: var(--nav-background-color);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.nav a {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav a:hover {
+  color: var(--nav-hover-link-color);
+  background-color: var(--nav-hover-background-color);
+}
+
+.headercontainer {
+  background-color: var(--accent1-color);
+}
+
+.navigation a {
+  color: white; /* Link color */
+  padding: 10px; /* Padding for links */
+  text-decoration: none; /* Remove underline */
+  transition: background 0.3s; /* Smooth background transition */
+}
+
+.navigation a:hover {
+  background-color: #555; /* Change background on hover */
+}
+
+/* Hamburger button styles */
+#menu {
+  background: none; /* No background */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor */
+  position: relative;
+  float: right;
+  right: 4px;
+  margin: auto; /* Position relative for the icon */
+}
+
+.hamburger-icon {
+  display: block;
+  width: 10vw; /* Width of the hamburger icon */
+  height: 1vw; /* Height of the hamburger lines */
+  background-color: var(--white); /* Color of the hamburger lines */
+  position: relative;
+  z-index: 1; /* Position relative for stacking */
+}
+
+/* Create three lines for the hamburger icon */
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: "";
+  /* Create pseudo-elements */
+  width: 10vw; /* Same width as the main line */
+  height: 1vw; /* Same height as the main line */
+  background-color: white; /* Color of the lines */
+  position: absolute; /* Position absolute for stacking */
+  left: 0; /* Align to the left */
+  transition: all 0.3s;
+  margin-bottom: 10px; /* Smooth transition */
+}
+
+.hamburger-icon::before {
+  top: -10px; /* Position above the main line */
+}
+
+.hamburger-icon::after {
+  top: 10px; /* Position below the main line */
+}
+
+/* Change the hamburger icon to an 'X' when open */
+#menu.open .hamburger-icon {
+  background-color: transparent; /* Hide the main line */
+}
+
+#menu.open .hamburger-icon::before {
+  transform: rotate(45deg); /* Rotate the top line */
+  top: 0; /* Align to the center */
+}
+
+#menu.open .hamburger-icon::after {
+  transform: rotate(-45deg); /* Rotate the bottom line */
+  top: 0; /* Align to the center */
+}
+
+footer {
+  padding: 10px;
+  text-align: center;
+  background-color: var(--accent1-color);
+  margin-top: 10px;
+  box-shadow: 0 0 30px gray;
+}
+
+footer p {
+  color: white;
+}
+
+.lm {
+  color: yellow;
+}
+
+.hero-img img {
+  width: 100px;
+  height: auto;
+  margin: 5px;
+}
+
+@media (min-width: 320px) and (max-width: 426px) {
+  /* Basic styles for the navigation */
+  .navigation {
+    display: none; /* Hide navigation by default */
+    flex-direction: column;
+    padding: 2vw; /* Stack items vertically */
+    background-color: var(
+      --nav-hover-link-color
+    ); /* Background color for the menu */
+    position: absolute; /* Position it absolutely */
+    right: 0; /* Align to the right */
+    z-index: 1; /* Ensure it appears above other content */
+  }
+
+  .headercontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--nav-background-color);
+    padding: 10px;
+  }
+
+  .hero-img {
+    grid-column: 1;
+  }
+
+  .headercontainer h1 {
+    color: white;
+    font-size: large;
+  }
+
+  .navigation.open {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: var(--nav-background-color);
+    gap: 0; /* Show the navigation when open */
+  }
+
+  /* Hamburger button styles */
+  #menu {
+    background: none; /* No background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    position: relative;
+    left: 4vw;
+    float: right;
+    bottom: 40px;
+    margin: 4vw; /* Position relative for the icon */
+  }
+
+  .hamburger-icon {
+    display: block;
+    width: 10vw; /* Width of the hamburger icon */
+    height: 1vw; /* Height of the hamburger lines */
+    background-color: white; /* Color of the hamburger lines */
+    position: relative;
+    z-index: 1; /* Position relative for stacking */
+  }
+
+  /* Create three lines for the hamburger icon */
+  .hamburger-icon::before,
+  .hamburger-icon::after {
+    content: "";
+    /* Create pseudo-elements */
+    width: 10vw; /* Same width as the main line */
+    height: 1vw; /* Same height as the main line */
+    background-color: white; /* Color of the lines */
+    position: absolute; /* Position absolute for stacking */
+    left: 0; /* Align to the left */
+    transition: all 0.3s;
+    margin-bottom: 10px; /* Smooth transition */
+  }
+
+  .hamburger-icon::before {
+    top: -10px; /* Position above the main line */
+  }
+
+  .hamburger-icon::after {
+    top: 10px; /* Position below the main line */
+  }
+
+  /* Change the hamburger icon to an 'X' when open */
+  #menu.open .hamburger-icon {
+    background-color: transparent; /* Hide the main line */
+  }
+
+  #menu.open .hamburger-icon::before {
+    transform: rotate(45deg); /* Rotate the top line */
+    top: 0; /* Align to the center */
+  }
+
+  #menu.open .hamburger-icon::after {
+    transform: rotate(-45deg); /* Rotate the bottom line */
+    top: 0; /* Align to the center */
+  }
+
+  .navigation a {
+    font-weight: bold;
+  }
+
+  .aba img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
+
+  figcaption {
+    font-style: oblique;
+    margin-bottom: 2vw;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 769px) {
+  .header {
+    background-color: var(--nav-background-color);
     color: white;
     padding: 10px 20px;
     display: flex;
     align-items: center;
-}
-.header img{
+    width: 100%;
+  }
+
+  .headercontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--nav-background-color);
+    padding: 10px;
+  }
+
+  .headercontainer h1 {
+    margin-left: 2vw;
+    color: var(--secondary-color);
+    font-size: xx-large;
+  }
+
+  section h2 {
+    color: var(--white);
+    padding: 2vw;
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+    background-color: var(--nav-background-color);
+  }
+
+  main {
+    margin: 0;
+  }
+
+  header img {
     width: 100px;
     margin-right: 20px;
     box-shadow: 0 0 30px black;
-}
-.header h1 {
+  }
+
+  header h1 {
     margin: 0;
     font-size: 24px;
-}
-.nav {
+  }
+
+  #menu {
+    display: none;
+  }
+
+  .navigation {
     background-color: black;
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
-}
-.nav a {
-    color: white;
+  }
+
+  .navigation a {
+    color: var(--nav-link-color);
     text-decoration: none;
     font-size: 18px;
-}
-.nav a:hover {
-    color: yellow;
-}
-.nav a.active {
-    color: yellow;
+  }
+
+  .navigation a:hover {
+    color: var(--nav-hover-link-color);
+    font-weight: bold;
+  }
+
+  .navigation a:active {
+    color: var(--nav-hover-link-color); /* Change the text color when active */
+    background-color: #fcfc05; /* Change the background color when active */
+  }
+
+  .courseandcount {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  section h2 {
+    position: relative;
+    bottom: 20px;
+  }
+
+  .aba img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
+
+  figcaption {
+    font-style: oblique;
+    margin-bottom: 2vw;
+  }
 }
 
-footer {
-    padding: 10px;
-    text-align: center;
-    background-color: var(--accent1-color);
-    margin-top: 10px;
-    box-shadow: 0 0 30px gray;
-  }
-  
-  footer p {
+@media (min-width: 794px) {
+  .header {
+    background-color: var(--nav-background-color);
     color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
   }
-  
-  .lm {
-    color: yellow;
+
+  .headercontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--nav-background-color);
+    padding: 10px;
   }
+
+  .headercontainer h1 {
+    margin-left: 2vw;
+    color: var(--secondary-color);
+    font-size: xx-large;
+  }
+
+  section h2 {
+    color: var(--white);
+    padding: 2vw;
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+    background-color: var(--nav-background-color);
+  }
+
+  main {
+    margin: 0;
+  }
+
+  header img {
+    width: 100px;
+    margin-right: 20px;
+    box-shadow: 0 0 30px black;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  .navigation {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+
+  .navigation a {
+    color: var(--nav-link-color);
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .navigation a:hover {
+    color: var(--nav-hover-link-color);
+    font-weight: bold;
+  }
+
+  .navigation a:active {
+    color: var(--nav-hover-link-color); /* Change the text color when active */
+    background-color: #fcfc05; /* Change the background color when active */
+  }
+
+  .courseandcount {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  section h2 {
+    position: relative;
+    bottom: 20px;
+  }
+
+  .aba img {
+    width: 100%;
+    height: auto;
+    margin: 2px;
+  }
+
+  figcaption {
+    font-style: oblique;
+    margin-bottom: 2vw;
+  }
+}

@@ -9,28 +9,50 @@
     <link rel="stylesheet" href="styles/coursehomepage.css">
     <script src="scripts/coursehomepage.js" defer></script>
 
-    <link rel="stylesheet" href="styles/normalize.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="header">
-            <img alt="Profile picture of Lifegate Justice" src="images/profile_pic.webp" />
-            <h1>De-Tom Lifegate</h1>
-        </div>
-        <nav>
-            <div class="nav">
-                <a class="active" href="#">Home</a>
-                <a href="#">Chamber</a>
-                <a href="#">GitHub Profile</a>
-                <a href="#">LinkedIn</a>
+        <div class="headercontainer">
+            <div class="hero-img">   
+                <a href="index.html" target="_blank" style="text-decoration: none;">
+                    <img src="images/profile_pic.webp" alt="Clickable Image"/>
+                </a>
             </div>
+            <h1>Lifegate Justice</h1>
+            <button id="menu" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+            </button>
+        </div>
+        <nav class="navigation" aria-label="Main navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="#">Chamber</a>
+            <a href="#">GitHub Profile</a>
+            <a href="#">LinkedIn</a>
         </nav>
     </header>
     <main>
+        <div class="courseandcount">
+        <section>
+            <h2>Course Work</h2>
+            <div>
+                <button id="all-courses">All Courses</button>
+                <button id="wdd-courses">WDD Courses</button>
+                <button id="cse-courses">CSE Courses</button>
+            </div>
+        </section>
+        <section class="aba">
+            <h2>Aba, Nigeria</h2>
+            <figure>
+            <img src="images/Abeokuta_Forest_Nursery.webp" alt="Abeokuta Forest Nursery">
+            <figcaption>Abeokuta Forest Nursery</figcaption>
+        </figure>
+        </section></div>
+        <section>
+            <h2>Web and Computer Programming Certificate</h2>
+        </section>
         <!-- Add main content here -->
     </main>
     <footer>
