@@ -1,9 +1,27 @@
-const lastModified = document.querySelector("#last-modified");
+// Get the current year
+const currentYear = new Date().getFullYear();
 
-const today = new Date();
-const formattedDate = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'numeric', year: 'numeric' }).format(today);
+// Get the last modified date
+const lastModifiedDate = document.lastModified;
 
-if (lastModified) lastModified.textContent = formattedDate;
+// Select the footer paragraphs
+const footerParagraphs = document.querySelectorAll('footer p');
+
+// Select the span for the Nigerian flag
+const nigerianFlagSpan = document.querySelector('footer span');
+
+// Add the Nigerian flag image inside the span
+nigerianFlagSpan.innerHTML = `<img src="images/flag--ng-4x3.svg" alt="Nigerian flag">`;
+
+// Update the first paragraph with the current year and add a line break
+footerParagraphs[0].innerHTML = `© ${currentYear}<br> Lifegate Justice De-Tom`;
+
+// Update the second paragraph with "Nigeria" and the flag
+footerParagraphs[1].innerHTML = `Nigeria`;
+
+// Update the third paragraph with the last modified date
+footerParagraphs[2].textContent = `Last modified: ${lastModifiedDate}`;
+
 
 function toggleMenu() {
     const nav = document.querySelector('.navigation');
@@ -27,7 +45,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -40,7 +58,7 @@ const courses = [
             'HTML',
             'CSS'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -52,7 +70,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -64,7 +82,7 @@ const courses = [
         technology: [
             'C#'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -78,7 +96,7 @@ const courses = [
             'CSS',
             'JavaScript'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',

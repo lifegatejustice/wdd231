@@ -19,6 +19,12 @@ body {
   margin: 0;
 }
 
+.aba img {
+    width: 100%;
+    height: auto;
+    margin: 2px;
+  }
+
 .header {
   background-color: var(--nav-background-color);
   color: white;
@@ -55,16 +61,17 @@ main {
   box-shadow: 0 0 30px black;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 24px;
+header h1 {
+  color: var(--white);
+  position: relative;
+  z-index: 1;
 }
 
 .nav {
   background-color: var(--nav-background-color);
   display: flex;
   justify-content: space-around;
-  padding: 10px 0;
+  
 }
 
 .nav a {
@@ -72,6 +79,8 @@ main {
   text-decoration: none;
   font-size: 18px;
 }
+
+
 
 .nav a:hover {
   color: var(--nav-hover-link-color);
@@ -150,6 +159,13 @@ main {
   top: 0; /* Align to the center */
 }
 
+.countandflag{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
 footer {
   padding: 10px;
   text-align: center;
@@ -160,6 +176,11 @@ footer {
 
 footer p {
   color: white;
+  margin: 0%;
+}
+
+footer img{
+    width: 10%;
 }
 
 .lm {
@@ -191,7 +212,6 @@ footer p {
     align-items: center;
     justify-content: space-between;
     background-color: var(--nav-background-color);
-    padding: 10px;
   }
 
   .hero-img {
