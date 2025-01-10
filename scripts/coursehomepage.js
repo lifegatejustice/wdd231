@@ -112,4 +112,43 @@ const courses = [
         ],
         completed: false
     }
-]
+];
+
+// Function to display courses based on the provided array
+function displayCourses(coursesToDisplay) {
+    const coursesContainer = document.getElementById('courses-section');
+    coursesContainer.innerHTML = ''; // Clear existing content
+
+    coursesToDisplay.forEach(course => {
+        const courseElement = document.createElement('div');
+        courseElement.className = 'course ' + (course.completed ? 'completed' : 'not-completed'); // Apply class based on completion status
+        courseElement.innerHTML = `<h3>${course.title}</h3> `; // Set the course details
+        coursesContainer.appendChild(courseElement); // Append to the container
+    });
+}
+
+// Function to filter courses based on category
+function filterCourses(category) {
+    let filteredCourses;
+    switch (category) {
+        case 'WDD Courses':
+            filteredCourses = courses.filter(course => course.subject === 'WDD');
+            break;
+        case 'CSE Courses':
+            filteredCourses = courses.filter(course => course.subject === 'CSE');
+            break;
+        default:
+            filteredCourses = courses;
+    }
+    displayCourses(filteredCourses);
+}
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('all-courses').addEventListener('click', () => displayCourses(courses));
+    document.getElementById('wdd-courses').addEventListener('click', () => filterCourses('WDD Courses'));
+    document.getElementById('cse-courses').addEventListener('click', () => filterCourses('CSE Courses'));
+
+    // Display all courses initially
+    displayCourses(courses);
+});

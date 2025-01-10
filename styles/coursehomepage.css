@@ -5,7 +5,7 @@
   --accent2-color: #006622;
   --heading-font: "Outfit", sans-serif;
   --paragraph-font: "Poppins", sans-serif;
-  --black: #0000;
+  --black: #00000000;
   --white: #ffff;
 
   --nav-background-color: #1e4e6b;
@@ -18,6 +18,73 @@ body {
   font-family: var(--paragraph-font);
   margin: 0;
 }
+
+.course.completed {
+    background-color: #d4edda; /* Light green background for completed courses */
+    color: #155724; /* Dark green text color */
+    border: 1px solid #c3e6cb; /* Border color */
+    padding: 10px;
+    margin: 5px 10px ;
+}
+
+.course.not-completed {
+    background-color: #f8d7da; /* Light red background for not completed courses */
+    color: #721c24; /* Dark red text color */
+    border: 1px solid #f5c6cb; /* Border color */
+    padding: 10px;
+    margin: 5px 10px;
+    
+}
+
+.wcpc{
+    padding-bottom: 10px;
+}
+
+.but{
+        background-color: #007BFF; /* Button background color */
+        color: white; /* Text color */
+        padding: 10px 20px; /* Padding inside the button */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded corners */
+        font-size: 16px; /* Text size */
+        cursor: pointer; /* Pointer cursor on hover */
+    }
+
+    .but:hover {
+        background-color: #0056b3; /* Darker background on hover */
+        color: #e6e6e6; /* Slightly lighter text color on hover */
+        transform: scale(1.05); /* Slightly enlarge the button */
+        transition: 0.3s ease; /* Smooth transition for the hover effect */
+    }
+
+    
+    .nav a.active {
+        color: yellow;
+    }
+
+    .but:focus {
+        background-color: #0056b3; /* Darker background on hover */ 
+        margin: 2px;/* Outline for accessibility */
+        outline-offset: 2px;
+    }
+
+    .navigation a:focus {
+        color: var(--nav-hover-link-color); /* Darker background on hover */ 
+        margin: 2px;/* Outline for accessibility */
+        outline-offset: 2px;
+    }
+
+    .navigation.open a:focus {
+        color: var(--nav-hover-link-color); /* Darker background on hover */ 
+        margin: 2px;/* Outline for accessibility */
+        outline-offset: 2px;
+    }
+
+    .active{
+        color: var(--nav-hover-link-color)!important;
+    }
+
+
 
 .aba img {
     width: 100%;
@@ -41,6 +108,7 @@ section {
   text-align: center;
   border-top-left-radius: 2vw;
   border-top-right-radius: 2vw;
+  padding-bottom: 10px;
 }
 
 section h2 {
@@ -67,26 +135,6 @@ header h1 {
   z-index: 1;
 }
 
-.nav {
-  background-color: var(--nav-background-color);
-  display: flex;
-  justify-content: space-around;
-  
-}
-
-.nav a {
-  color: var(--nav-link-color);
-  text-decoration: none;
-  font-size: 18px;
-}
-
-
-
-.nav a:hover {
-  color: var(--nav-hover-link-color);
-  background-color: var(--nav-hover-background-color);
-}
-
 .headercontainer {
   background-color: var(--accent1-color);
 }
@@ -98,8 +146,8 @@ header h1 {
   transition: background 0.3s; /* Smooth background transition */
 }
 
-.navigation a:hover {
-  background-color: #555; /* Change background on hover */
+.navigation a :hover{
+    color: var(--nav-hover-link-color);
 }
 
 /* Hamburger button styles */
@@ -315,6 +363,10 @@ footer img{
     width: 100%;
   }
 
+  .navigation a:hover {
+    color: yellow;
+}
+
   .headercontainer {
     display: flex;
     align-items: center;
@@ -370,13 +422,14 @@ footer img{
   }
 
   .navigation a:hover {
-    color: var(--nav-hover-link-color);
+    
+    color: black;
     font-weight: bold;
   }
 
   .navigation a:active {
-    color: var(--nav-hover-link-color); /* Change the text color when active */
-    background-color: #fcfc05; /* Change the background color when active */
+    color: var(--black); /* Change the text color when active */
+     /* Change the background color when active */
   }
 
   .courseandcount {
@@ -470,10 +523,6 @@ footer img{
     font-weight: bold;
   }
 
-  .navigation a:active {
-    color: var(--nav-hover-link-color); /* Change the text color when active */
-    background-color: #fcfc05; /* Change the background color when active */
-  }
 
   .courseandcount {
     display: grid;
