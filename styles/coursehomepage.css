@@ -1,11 +1,12 @@
 :root {
   --primary-color: #004d1a;
+  --primary-color2: #4d0000;
   --secondary-color: #e2dede;
   --accent1-color: #2c5c7d;
   --accent2-color: #006622;
   --heading-font: "Outfit", sans-serif;
   --paragraph-font: "Poppins", sans-serif;
-  --black: #00000000;
+  --black: #000000;
   --white: #ffff;
 
   --nav-background-color: #1e4e6b;
@@ -14,23 +15,26 @@
   --nav-hover-background-color: #006622;
 }
 
+
 body {
   font-family: var(--paragraph-font);
   margin: 0;
 }
 
 .course.completed {
-    background-color: #d4edda; /* Light green background for completed courses */
-    color: #155724; /* Dark green text color */
-    border: 1px solid #c3e6cb; /* Border color */
+    display: inline-flex;
+    background-color: var(--accent2-color); /* Light green background for completed courses */
+    color: var(--white); /* Dark green text color */
+    border: 1px solid var(--black); /* Border color */
     padding: 10px;
     margin: 5px 10px ;
 }
 
 .course.not-completed {
-    background-color: #f8d7da; /* Light red background for not completed courses */
-    color: #721c24; /* Dark red text color */
-    border: 1px solid #f5c6cb; /* Border color */
+    display: inline-flex;
+    background-color: var(--primary-color2); /* Light red background for not completed courses */
+    color: var(--white); /* Dark red text color */
+    border: 1px solid var(--black); /* Border color */
     padding: 10px;
     margin: 5px 10px;
     
@@ -41,13 +45,21 @@ body {
 }
 
 .but{
-        background-color: #007BFF; /* Button background color */
+        background-color: var(--black); /* Button background color */
         color: white; /* Text color */
         padding: 10px 20px; /* Padding inside the button */
         border: none; /* Remove border */
         border-radius: 5px; /* Rounded corners */
         font-size: 16px; /* Text size */
         cursor: pointer; /* Pointer cursor on hover */
+        margin-bottom: 5px;
+        
+    }
+
+    .butt{
+        border-bottom: 1px solid grey;
+        margin: 20px;
+        margin-bottom: 10px;
     }
 
     .but:hover {
@@ -83,6 +95,29 @@ body {
     .active{
         color: var(--nav-hover-link-color)!important;
     }
+
+    .course{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    
+    }
+
+    .course {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        height: 50px;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+
 
 
 
@@ -216,19 +251,25 @@ header h1 {
 
 footer {
   padding: 10px;
+  display: flex;
   text-align: center;
   background-color: var(--accent1-color);
   margin-top: 10px;
   box-shadow: 0 0 30px gray;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
 
 footer p {
   color: white;
-  margin: 0%;
+  margin: 1%;
 }
 
 footer img{
-    width: 10%;
+    width:4vw;
+    height: 4vw;
 }
 
 .lm {
@@ -265,6 +306,16 @@ footer img{
   .hero-img {
     grid-column: 1;
   }
+
+  section h2{
+    font-size: 1rem;
+  }
+
+  section h3{
+    font-size: 1rem;
+  }
+
+  
 
   .headercontainer h1 {
     color: white;
@@ -362,6 +413,19 @@ footer img{
     align-items: center;
     width: 100%;
   }
+
+  .but{
+    background-color: var(--black); /* Button background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Text size */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-bottom: 5px;
+    width: 200px;
+    
+}
 
   .navigation a:hover {
     color: yellow;
@@ -464,6 +528,21 @@ footer img{
     width: 100%;
   }
 
+  .but{
+    background-color: var(--black); /* Button background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Text size */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-bottom: 5px;
+    width:  250px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
   .headercontainer {
     display: flex;
     align-items: center;
@@ -474,7 +553,7 @@ footer img{
 
   .headercontainer h1 {
     margin-left: 2vw;
-    color: var(--secondary-color);
+    color: var(--white);
     font-size: xx-large;
   }
 

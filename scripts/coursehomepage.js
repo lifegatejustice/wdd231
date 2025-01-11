@@ -14,7 +14,7 @@ const nigerianFlagSpan = document.querySelector('footer span');
 nigerianFlagSpan.innerHTML = `<img src="images/flag--ng-4x3.svg" alt="Nigerian flag">`;
 
 // Update the first paragraph with the current year and add a line break
-footerParagraphs[0].innerHTML = `© ${currentYear}<br> Lifegate Justice De-Tom`;
+footerParagraphs[0].innerHTML = `© ${currentYear} Lifegate Justice De-Tom`;
 
 // Update the second paragraph with "Nigeria" and the flag
 footerParagraphs[1].innerHTML = `Nigeria`;
