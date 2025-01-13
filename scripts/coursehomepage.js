@@ -119,36 +119,40 @@ function displayCourses(coursesToDisplay) {
     const coursesContainer = document.getElementById('courses-section');
     coursesContainer.innerHTML = ''; // Clear existing content
 
+    // Calculate total credits using reduce
+    const totalCredits = coursesToDisplay.reduce((sum, course) => sum + course.credits, 0);
+
+    // Display total credits
+    const totalCreditsElement = document.createElement('div');
+    totalCreditsElement.className = 'total-credits';
+    totalCreditsElement.innerHTML = `<strong>Total Credits Required:</strong> ${totalCredits}`;
+    coursesContainer.appendChild(totalCreditsElement);
+
+    // Display each course
     coursesToDisplay.forEach(course => {
         const courseElement = document.createElement('div');
         courseElement.className = 'course ' + (course.completed ? 'completed' : 'not-completed'); // Apply class based on completion status
-        courseElement.innerHTML = `<h3>${course.title}</h3> `; // Set the course details
+        courseElement.innerHTML = `
+            <h3>${course.title}</h
+        `; // Set the course details
         coursesContainer.appendChild(courseElement); // Append to the container
     });
 }
 
-// Function to filter courses based on category
-function filterCourses(category) {
-    let filteredCourses;
-    switch (category) {
-        case 'WDD Courses':
-            filteredCourses = courses.filter(course => course.subject === 'WDD');
-            break;
-        case 'CSE Courses':
-            filteredCourses = courses.filter(course => course.subject === 'CSE');
-            break;
-        default:
-            filteredCourses = courses;
-    }
-    displayCourses(filteredCourses);
-}
-
-
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('all-courses').addEventListener('click', () => displayCourses(courses));
-    document.getElementById('wdd-courses').addEventListener('click', () => filterCourses('WDD Courses'));
-    document.getElementById('cse-courses').addEventListener('click', () => filterCourses('CSE Courses'));
-
-    // Display all courses initially
-    displayCourses(courses);
+// Event listeners for buttons
+document.getElementById('all-courses').addEventListener('click', () => {
+    displayCourses(courses); // Display all courses
 });
+
+document.getElementById('wdd-courses').addEventListener('click', () => {
+    const wddCourses = courses.filter(course => course.subject === 'WDD');
+    displayCourses(wddCourses); // Display WDD courses
+});
+
+document.getElementById('cse-courses').addEventListener('click', () => {
+    const cseCourses = courses.filter(course => course.subject === 'CSE');
+    displayCourses(cseCourses); // Display CSE courses
+});
+
+// Initially display all courses
+displayCourses(courses);
