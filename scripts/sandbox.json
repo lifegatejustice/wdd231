@@ -1,15 +1,3 @@
-[
-    {
-        "name": "Big Cooperation",
-        "numberOfEmployees": 10000,
-        "ceo": "Mary",
-        "rating": 3.6
-    },
-
-    {
-        "name": "Small Startup",
-        "numberOfEmployees": 10000,
-        "ceo": null,
-        "rating": 3.6
-    }
-]
+async function doChores(){
+    
+}
