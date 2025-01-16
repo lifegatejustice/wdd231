@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latter-day Prophets</title>
+    <script src="scripts/prophets.js" defer></script>
+    <link rel="stylesheet" href="styles/prophets.css">
+</head>
+<body>
+    <header>
+        <h1>Latter-day Prophets</h1>
+    </header>
+    <main>
+        <div id="filter-buttons">
+            <button onclick="filterByBirthplace('Utah')">Born in Utah</button>
+            <button onclick="filterByBirthplace('Outside USA')">Born Outside the USA</button>
+            <button onclick="filterByAge(95)">Lived to 95+</button>
+            <button onclick="filterByChildren(10)">10 or More Children</button>
+            <button onclick="filterByServiceYears(15)">Served 15+ Years</button>
+        </div>
+        <div id="cards"></div>
+    </main>
+    <footer>
+        Lifegate Justice | Latter-day Prophets
+    </footer>
+</body>
+</html>
