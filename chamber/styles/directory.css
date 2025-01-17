@@ -1,0 +1,57 @@
+ body{
+
+ }
+
+ section{
+    border-bottom: 2px solid green;
+    margin: 1vw;
+ }
+ section img{
+    width: 300px;
+    height: auto; 
+ }
+
+
+ .smap{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+ }
+
+ .map img{
+    width: auto;
+    height: auto; 
+ }
+
+ .smap img{
+    width: auto;
+    height: auto;
+
+ }
+
+ .wireframe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+ }
+
+ .iwireframe img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+ }
+
+ p, li{
+    color: white;
+ }
+
+ h1, h2, h3, h4{
+    color: rgb(6, 230, 6);
+ }
+ main{
+    background-color: rgb(64, 63, 63);
+ }
