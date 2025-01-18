@@ -43,6 +43,10 @@ header{
    background-color: var(--black);
 }
 
+footer{
+    margin: 2vw;
+}
+
 
 @media (min-width: 320px) and (max-width: 426px) {
     .navigation {
