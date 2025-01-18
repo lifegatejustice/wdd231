@@ -14,12 +14,40 @@ body {
   color: var(--Text-Color);
 }
 
+#member-list.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+#member-list.list-view {
+  display: block;
+}
+
+.member-card, .member-list-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.member-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.member-list-item h3 {
+  margin-top: 0;
+}
+
+
+
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--Primary-Color);
-  padding: 10px 20px;
 }
 
 .header-logo {
@@ -207,10 +235,9 @@ footer {
 @media (min-width: 427px) and (max-width: 4000px) {
   header {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     background-color: var(--Primary-Color);
-    padding: 10px 20px;
   }
 
   .extra-switch1 {

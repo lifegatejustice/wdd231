@@ -22,6 +22,7 @@
     <meta property="fb:app_id" content="laala" />
     <meta name="twitter:site" content="@laalarts">
     <script src="scripts/directory.js" defer></script>
+    
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/directory.css">
     
@@ -55,26 +56,17 @@
         </div>
     </header>
     <main>
-        <div class="view-toggle">
-            <button id="grid-view" class="active">Grid View</button>
-            <button id="list-view">List View</button>
-        </div>
-        <div id="member-list">
-            <!-- Member cards will be dynamically rendered here -->
-            <div class="member-card">
-                <img src="path/to/image.jpg" alt="Business Image">
-                <h1>Business Name</h1>
-                <p>Business Tagline</p>
-                <p>Email: example@example.com</p>
-                <p>Phone: (123) 456-7890</p>
-                <a href="http://example.com">Visit Website</a>
-            </div>
-            <!-- Additional member cards will be added dynamically -->
-        </div>
+        <section class="view-toggle">
+            <button id="grid-view-button">Grid View</button>
+            <button id="list-view-button">List View</button>
+        </section>
+        <section id="member-list" class="grid-view">
+            <!-- Dynamic content will be inserted here -->
+        </section>
     </main>
     <footer>
         <div class="footer">
-        <div class="footer-contact-info">
+        <div class="footer-contat-info">
             <h2>Abia Chamber of Commerce</h2>
             <p>12 Osusu Umueme, Obingwa L. G. A</p>
             <p>Abia, Mail 999</p>
