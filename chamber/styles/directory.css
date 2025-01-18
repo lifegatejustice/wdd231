@@ -43,8 +43,21 @@ header{
    background-color: var(--black);
 }
 
-footer{
-    margin: 2vw;
+
+.social-media-icons{
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 
