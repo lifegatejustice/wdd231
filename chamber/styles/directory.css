@@ -1,247 +1,301 @@
 :root {
-    --Primary-Color: green;
-    --Secondary-Color: white;
-    --Background-Color: rgb(47, 47, 47);
-    --Text-Color: white;
-    --Font-Family: Verdana;
-    --black: black;
-    --white: white;
+  --Primary-Color: green;
+  --Secondary-Color: white;
+  --Background-Color: rgb(47, 47, 47);
+  --Text-Color: white;
+  --Font-Family: Verdana;
+  --black: black;
+  --white: white;
 }
 
 body {
-    font-family: var(--Font-Family);
-    background-color: var(--Background-Color);
-    color: var(--Text-Color);
+  font-family: var(--Font-Family);
+  background-color: var(--Background-Color);
+  color: var(--Text-Color);
 }
 
 .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #e0e0e0;
-    padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--Primary-Color);
+  padding: 10px 20px;
 }
 
 .header-logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .header-logo img {
-    height: 50px; /* Adjust as needed */
-    margin-right: 10px;
+  height: 50px; /* Adjust as needed */
+  margin-right: 10px;
 }
 
-.header-logo img{
-   width: auto;
-   height: auto;
-   grid-column: 2;
-   max-width: 100%;
+.header-logo img {
+  width: auto;
+  height: auto;
+  grid-column: 2;
+  max-width: 100%;
 }
 
-header{
-   background-color: var(--black);
+header {
+  background-color: var(--Primary-Color);
 }
 
-
-.social-media-icons{
-    width: 10vw;
-    height: 10vw;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--Primary-Color);
 }
 
-.footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
+.footer {
+  background-color: var(--Primary-Color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.footer h1 {
+  font-size: 18px;
+  margin: 0;
+  text-align: left;
+}
+.footer p {
+  font-size: 14px;
+  margin: 5px 0;
+  text-align: left;
+}
+
+.social-media-icons {
+  margin: 10px 0;
+  text-align: left;
+  display: flex;
+}
+
+.social-media-icons img {
+  font-size: 30px;
+  margin: 0 10px;
+  color: #000;
+  width: 10vw;
+}
 
 @media (min-width: 320px) and (max-width: 426px) {
-    .navigation {
-        display: none;
-        flex-direction: row;
-        position: static;
-        background-color: transparent;
-        padding: 0;
-        border-radius: 0;
-    }
+  .navigation {
+    display: none;
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
 
-    .extra-switch2{
-        display: none;
-    }
+  .extra-switch2 {
+    display: none;
+  }
 
-    .navigation a {
-        margin-left: 20px;
-        margin: 0;
-    }
-    .navigation.open {
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        gap: 0; /* Show the navigation when open */
-      }
-    
-      .navigation a {
-        color: white; /* Link color */
-        font-weight: bold;
-        width: 100%;
-        font-size: 1rem;
-        padding: 10px; /* Padding for links */
-        text-decoration: none; /* Remove underline */
-        transition: background 0.3s; /* Smooth background transition */
-      }
-    
-      .navigation.open img{
-        width: 10vw;
-        height: auto;
-    }
+  .navigation a {
+    margin-left: 20px;
+    margin: 0;
+  }
+  .navigation.open {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 0; /* Show the navigation when open */
+  }
 
-    .header-logo img{
-        width: 20vw;
-        height: auto;
-     }
+  .navigation a {
+    color: white; /* Link color */
+    font-weight: bold;
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px; /* Padding for links */
+    text-decoration: none; /* Remove underline */
+    transition: background 0.3s; /* Smooth background transition */
+  }
 
-     .header-logo p{
-        font-size: small;
-      }
-    
-    
-      /* Hamburger button styles */
-      #menu {
-        background: none; /* No background */
-        border: none; /* No border */
-        cursor: pointer; /* Pointer cursor */
-        display: flex;
-        right: 4px;/* Position relative for the icon */
-      }
-    
-      .hamburger-icon {
-        display: block;
-        width: 10vw; /* Width of the hamburger icon */
-        height: 1vw; /* Height of the hamburger lines */
-        background-color: var(--white); /* Color of the hamburger lines */
-        position: relative;
-        z-index: 1; /* Position relative for stacking */
-      }
-    
-      /* Create three lines for the hamburger icon */
-      .hamburger-icon::before,
-      .hamburger-icon::after {
-        content: "";
-        /* Create pseudo-elements */
-        width: 10vw; /* Same width as the main line */
-        height: 1vw; /* Same height as the main line */
-        background-color: var(--white); /* Color of the lines */
-        position: absolute; /* Position absolute for stacking */
-        left: 0; /* Align to the left */
-        transition: all 0.3s;
-        margin-bottom: 10px;
-        /* Smooth transition */
-      }
-    
-      .hamburger-icon::before {
-        top: -10px; /* Position above the main line */
-      }
-    
-      .hamburger-icon::after {
-        top: 10px; /* Position below the main line */
-      }
-    
-      /* Change the hamburger icon to an 'X' when open */
-      #menu.open .hamburger-icon {
-        background-color: transparent; /* Hide the main line */
-      }
-    
-      #menu.open .hamburger-icon::before {
-        transform: rotate(45deg); /* Rotate the top line */
-        top: 0; /* Align to the center */
-      }
-    
-      #menu.open .hamburger-icon::after {
-        transform: rotate(-45deg); /* Rotate the bottom line */
-        top: 0; /* Align to the center */
-      }
-    
-      .extra-switch1 img{
-        width: 10vw;
-        height: 10vw;
+  .navigation.open img {
+    width: 10vw;
+    height: auto;
+  }
 
-      }
+  .header-logo img {
+    width: 20vw;
+    height: auto;
+  }
 
+  .header-logo p {
+    font-size: small;
+  }
+
+  /* Hamburger button styles */
+  #menu {
+    background: none; /* No background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    display: flex;
+    right: 4px; /* Position relative for the icon */
+  }
+
+  .hamburger-icon {
+    display: block;
+    width: 10vw; /* Width of the hamburger icon */
+    height: 1vw; /* Height of the hamburger lines */
+    background-color: var(--white); /* Color of the hamburger lines */
+    position: relative;
+    z-index: 1; /* Position relative for stacking */
+  }
+
+  /* Create three lines for the hamburger icon */
+  .hamburger-icon::before,
+  .hamburger-icon::after {
+    content: "";
+    /* Create pseudo-elements */
+    width: 10vw; /* Same width as the main line */
+    height: 1vw; /* Same height as the main line */
+    background-color: var(--white); /* Color of the lines */
+    position: absolute; /* Position absolute for stacking */
+    left: 0; /* Align to the left */
+    transition: all 0.3s;
+    margin-bottom: 10px;
+    /* Smooth transition */
+  }
+
+  .hamburger-icon::before {
+    top: -10px; /* Position above the main line */
+  }
+
+  .hamburger-icon::after {
+    top: 10px; /* Position below the main line */
+  }
+
+  /* Change the hamburger icon to an 'X' when open */
+  #menu.open .hamburger-icon {
+    background-color: transparent; /* Hide the main line */
+  }
+
+  #menu.open .hamburger-icon::before {
+    transform: rotate(45deg); /* Rotate the top line */
+    top: 0; /* Align to the center */
+  }
+
+  #menu.open .hamburger-icon::after {
+    transform: rotate(-45deg); /* Rotate the bottom line */
+    top: 0; /* Align to the center */
+  }
+
+  .extra-switch1 img {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .social-media-icons {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
 
 @media (min-width: 427px) and (max-width: 4000px) {
+  header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    background-color: var(--Primary-Color);
+    padding: 10px 20px;
+  }
 
-    header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #e0e0e0;
-        padding: 10px 20px;
-    }
+  .extra-switch1 {
+    display: none;
+  }
 
-    .extra-switch1{
-        display: none;
-    }
+  .extra-switch2 img {
+    width: 10vw;
+    height: 10vw;
+  }
 
-    .header-logo{
-        display: flex;
-        align-items: center;
-    }
+  .header-logo {
+    display: flex;
+    align-items: center;
+  }
 
-    .header-logo img{
-        width: 40px;
-        height: 40px;
-     }
+  .header-logo img {
+    width: 10vw;
+    height: 10vw;
+  }
 
-     .header-logo h1 {
-        margin: 0;
-        font-size: 20px;
-        font-weight: normal;
-    }
+  .header-logo h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+    font-weight: bold;
+  }
 
-    .header-logo p {
-        margin: 0;
-        font-size: 12px;
-        color: #555;
-    }
+  .header-logo p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--white);
+  }
 
-    .navigation {
-        display: grid;
-        grid-column: 2;
-        grid-auto-flow: column;
-        justify-content: center;
-        font-size: 1.5vw;
-        align-items: center;
-    }
-    
-    .navigation a {
-        text-decoration: none;
-        color: white;
-        padding: 10px;
-        border-radius: 4px;
-        
-        transition: background-color 0.3s ease, color 0.3s ease;
-        text-align: center;
-    }
-    
-    .navigation .theme-toggle {
-        margin-left: 20px;
-        font-size: 18px;
-    }
+  .navigation {
+    display: grid;
+    grid-column: 2;
+    grid-auto-flow: column;
+    justify-content: center;
+    font-size: 1.5vw;
+    align-items: center;
+  }
 
-    #menu{
-        display: none;
-    }
+  .navigation a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
 
-    .navigation.open{
-        display: none;
-    }
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+  }
 
+  .navigation .theme-toggle {
+    margin-left: 20px;
+    font-size: 18px;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  .navigation.open {
+    display: none;
+  }
+
+  .social-media-icons {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .social-media-icons img {
+    width: 6vw;
+    height: auto;
+  }
+
+  .footer h2 {
+    font-size: 20px;
+  }
+
+  .info{
+    margin-left: 10vw;
+  }
+
+  .footer-contact-info{
+    margin-right: 10vw;
+  }
 }
-
