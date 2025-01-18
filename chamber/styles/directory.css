@@ -1,57 +1,40 @@
- body{
+:root{
+   --Primary-Color: green;
+   --Secondary-Color: white;
+   --Background-Color: rgb(47, 47, 47);
+   --Text-Color: white;
+   --Font-Family: Verdana;
+   --black: black;
+}
 
- }
+body{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
- section{
-    border-bottom: 2px solid green;
-    margin: 1vw;
- }
- section img{
-    width: 300px;
-    height: auto; 
- }
+}
 
+header{
+   background-color: var(black);
+}
 
- .smap{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 10px;
- }
+.header-container{
+   background-color: var(--black);
+   color: var(--Secondary-Color);
+   display: flex;
+   flex-direction: row;
 
- .map img{
-    width: auto;
-    height: auto; 
- }
+}
 
- .smap img{
-    width: auto;
-    height: auto;
+@media (min-width: 320px) and (max-width: 426px) {
+   
+}
 
- }
+@media (min-width: 427px) and (max-width: 4000px) {
+   nav{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
 
- .wireframe{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
- }
-
- .iwireframe img{
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
- }
-
- p, li{
-    color: white;
- }
-
- h1, h2, h3, h4{
-    color: rgb(6, 230, 6);
- }
- main{
-    background-color: rgb(64, 63, 63);
- }
+   }
+}
