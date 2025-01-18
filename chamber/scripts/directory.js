@@ -20,28 +20,40 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     function createMemberCard(member) {
         return `
+
+            <div class="member-card1">
+            <h3>${member.name}</h3>
             <div class="member-card">
+              
                 <img src="${member.image}" alt="${member.name} logo">
-                <h3>${member.name}</h3>
-                <p>${member.address}</p>
-                <p>${member.phone}</p>
-                <a href="${member.website}" target="_blank">Visit Website</a>
-                <p>Membership Level: ${["Member", "Silver", "Gold"][member.membershipLevel - 1]}</p>
-                <p>${member.description}</p>
-            </div>
+                
+                <div class="member-details">
+                
+                <b>ADDRESS: </b><p>${member.address}</p>
+                <b>PHONE: </b><p>${member.phone}</p>
+                <b>WEBSITE: </b><p><a href="${member.website}" target="_blank">Visit Website</a></p>
+                <b>MEMBERSHIP LEVEL: </b><p>${["Member", "Silver", "Gold"][member.membershipLevel - 1]}</p>
+                <p><span class="member-des">${member.description}</span></p></div>
+            </div></div>
         `;
     }
 
     function createMemberList(member) {
         return `
-            <div class="member-list-item">
-                <h3>${member.name}</h3>
-                <p>${member.address}</p>
-                <p>${member.phone}</p>
-                <a href="${member.website}" target="_blank">Visit Website</a>
-                <p>Membership Level: ${["Member", "Silver", "Gold"][member.membershipLevel - 1]}</p>
-                <p>${member.description}</p>
-            </div>
+             <div class="member-card1">
+            <h3>${member.name}</h3>
+            <div class="member-card">
+              
+                <img src="${member.image}" alt="${member.name} logo">
+                
+                <div class="member-details">
+                
+                <b>ADDRESS: </b><p>${member.address}</p>
+                <b>PHONE: </b><p>${member.phone}</p>
+                <b>WEBSITE: </b><p><a href="${member.website}" target="_blank">Visit Website</a></p>
+                <b>MEMBERSHIP LEVEL: </b><p>${["Member", "Silver", "Gold"][member.membershipLevel - 1]}</p>
+                <p>${member.description}</p></div>
+            </div></div>
         `;
     }
 
