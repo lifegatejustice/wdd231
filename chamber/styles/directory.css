@@ -16,9 +16,10 @@ body {
 
 .header-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    justify-content: space-between;
+    background-color: #e0e0e0;
+    padding: 10px 20px;
 }
 
 .header-logo {
@@ -43,10 +44,123 @@ header{
 }
 
 
+@media (min-width: 320px) and (max-width: 426px) {
+    .navigation {
+        display: none;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+    }
 
+    .extra-switch2{
+        display: none;
+    }
+
+    .navigation a {
+        margin-left: 20px;
+        margin: 0;
+    }
+    .navigation.open {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        gap: 0; /* Show the navigation when open */
+      }
+    
+      .navigation a {
+        color: white; /* Link color */
+        font-weight: bold;
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px; /* Padding for links */
+        text-decoration: none; /* Remove underline */
+        transition: background 0.3s; /* Smooth background transition */
+      }
+    
+      .navigation.open img{
+        width: 10vw;
+        height: auto;
+    }
+
+    .header-logo img{
+        width: 20vw;
+        height: auto;
+     }
+
+     .header-logo p{
+        font-size: small;
+      }
+    
+    
+      /* Hamburger button styles */
+      #menu {
+        background: none; /* No background */
+        border: none; /* No border */
+        cursor: pointer; /* Pointer cursor */
+        display: flex;
+        right: 4px;/* Position relative for the icon */
+      }
+    
+      .hamburger-icon {
+        display: block;
+        width: 10vw; /* Width of the hamburger icon */
+        height: 1vw; /* Height of the hamburger lines */
+        background-color: var(--white); /* Color of the hamburger lines */
+        position: relative;
+        z-index: 1; /* Position relative for stacking */
+      }
+    
+      /* Create three lines for the hamburger icon */
+      .hamburger-icon::before,
+      .hamburger-icon::after {
+        content: "";
+        /* Create pseudo-elements */
+        width: 10vw; /* Same width as the main line */
+        height: 1vw; /* Same height as the main line */
+        background-color: var(--white); /* Color of the lines */
+        position: absolute; /* Position absolute for stacking */
+        left: 0; /* Align to the left */
+        transition: all 0.3s;
+        margin-bottom: 10px;
+        /* Smooth transition */
+      }
+    
+      .hamburger-icon::before {
+        top: -10px; /* Position above the main line */
+      }
+    
+      .hamburger-icon::after {
+        top: 10px; /* Position below the main line */
+      }
+    
+      /* Change the hamburger icon to an 'X' when open */
+      #menu.open .hamburger-icon {
+        background-color: transparent; /* Hide the main line */
+      }
+    
+      #menu.open .hamburger-icon::before {
+        transform: rotate(45deg); /* Rotate the top line */
+        top: 0; /* Align to the center */
+      }
+    
+      #menu.open .hamburger-icon::after {
+        transform: rotate(-45deg); /* Rotate the bottom line */
+        top: 0; /* Align to the center */
+      }
+    
+      .extra-switch1 img{
+        width: 10vw;
+        height: 10vw;
+
+      }
+
+}
 
 @media (min-width: 427px) and (max-width: 4000px) {
-    .header-container {
+
+    header {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -54,7 +168,7 @@ header{
         padding: 10px 20px;
     }
 
-    .extra-switch{
+    .extra-switch1{
         display: none;
     }
 
@@ -81,29 +195,30 @@ header{
     }
 
     .navigation {
-        display: flex;
+        display: grid;
+        grid-column: 2;
+        grid-auto-flow: column;
+        justify-content: center;
+        font-size: 1.5vw;
         align-items: center;
     }
-
+    
     .navigation a {
-        margin-left: 20px;
         text-decoration: none;
-        color: #000;
-        font-size: 14px;
+        color: white;
+        padding: 10px;
+        border-radius: 4px;
+        
+        transition: background-color 0.3s ease, color 0.3s ease;
+        text-align: center;
     }
-    .navigation a.active {
-        font-weight: bold;
-    }
+    
     .navigation .theme-toggle {
         margin-left: 20px;
         font-size: 18px;
     }
 
     #menu{
-        display: none;
-    }
-
-    .extra-switch2{
         display: none;
     }
 
