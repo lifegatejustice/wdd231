@@ -79,9 +79,7 @@ body {
 .member-des{
   color: var(--Primary-Color);
 }
-b{
-  color: var(--Primary-Color);
-}
+
 .member-details{
   grid-column: 2;
   display: grid;
