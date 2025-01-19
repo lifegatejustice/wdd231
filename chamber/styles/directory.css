@@ -407,7 +407,7 @@ footer {
   .social-media-icons {
     display: flex;
     justify-content: center;
-    margin-left: 40x;
+    margin-left: 80px;
   }
 
   .social-media-icons img {
@@ -424,6 +424,6 @@ footer {
   }
 
   .footer-contact-info{
-    margin-right: vw;
+    margin-right: 10vw;
   }
 }
