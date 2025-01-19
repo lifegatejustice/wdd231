@@ -326,6 +326,15 @@ footer {
     color: var(--Primary-Color);
   }
 
+  #member-list.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 2vw;
+    font-size: 15px;
+  
+  }
+
 
 }
 
