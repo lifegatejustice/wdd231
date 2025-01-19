@@ -1,3 +1,19 @@
+// Get the current year
+const currentYear = new Date().getFullYear();
+
+// Get the last modified date
+const lastModifiedDate = document.lastModified;
+
+// Select the footer paragraphs
+const footerParagraphs = document.querySelectorAll('footer p');
+
+
+// Update the first paragraph with the current year and add a line break
+footerParagraphs[6].innerHTML = `© ${currentYear} 2025 Abia Chamber Of Commerce`;
+
+// Update the third paragraph with the last modified date
+footerParagraphs[7].textContent = `Last modified: ${lastModifiedDate}`;
+
 document.getElementById('menu').addEventListener('click', toggleMenu);
 
 function toggleMenu() {
