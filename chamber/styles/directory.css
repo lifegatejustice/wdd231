@@ -338,6 +338,21 @@ footer {
 
 }
 
+@media (min-width: 427px) and (max-width: 768px) {
+  #member-list.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    margin-bottom: 2vw;
+  
+  }
+
+  .footer{
+    margin:20px;
+  }
+
+}
+
 @media (min-width: 427px) and (max-width: 4000px) {
   header {
     display: flex;
