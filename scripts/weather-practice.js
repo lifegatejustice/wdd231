@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentTemp = document.querySelector('#current-temp');
   const weatherIcon = document.querySelector('#weather-icon');
   const captionDesc = document.querySelector('figcaption');
+  const weatherApi = 'cb9dc7fc689e41f4fe2dd4c5d716b04a'
 
-  const url = 'https://api.openweathermap.org/data/2.5/weather?lat=49.749992&lon=6.637143&units=metric&appid=cb9dc7fc689e41f4fe2dd4c5d716b04a';
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=49.749992&lon=6.637143&units=metric&appid=${weatherApi}`;
 
   async function apiFetch() {
     try {
