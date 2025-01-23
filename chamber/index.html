@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,8 +24,7 @@
     <link rel="icon" href="favicon.ico">
     
     <link rel="stylesheet" href="styles/normalize.css">
-    <script src="scripts/directory.js" defer></script>
-    
+    <script src="scripts/homepage.js" defer></script>
     
     <link rel="stylesheet" href="styles/directory.css">
     
@@ -61,8 +60,38 @@
     <main>
         <div class="hero">
             <img src="images/image.webp" alt="hero image" srcset="">
-
         </div>
+
+        <section class="call-to-action">
+            <h2>Join the Chamber of Commerce</h2>
+            <p>Become a part of our vibrant community and enjoy exclusive benefits.</p>
+            <a href="join.html" class="cta-button">Join Now</a>
+        </section>
+
+        <section class="current-events">
+            <h2>Current Events</h2>
+            <ul>
+                <li>Annual Business Expo - March 15, 2023</li>
+                <li>Networking Luncheon - April 10, 2023</li>
+                <li>Workshop: Digital Marketing - May 5, 2023</li>
+            </ul>
+        </section>
+
+        <section class="weather">
+            <h2>Weather</h2>
+            <p>Stay updated with the latest weather conditions in Abia.</p>
+            <div id="weather-info">
+                <p id="current-temp"></p>
+                <p id="weather-description"></p>
+                <h3>3-Day Forecast</h3>
+                <div id="forecast"></div>
+            </div>
+        </section>
+
+        <section class="company-spotlights">
+            <h2>Company Spotlights</h2>
+            <div id="spotlight-container"></div>
+        </section>
 
         <section class="view-toggle">
             <button id="grid-view-button" class="active">Grid View</button>
