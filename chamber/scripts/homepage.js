@@ -1,3 +1,28 @@
+// Get the current year
+const currentYear = new Date().getFullYear();
+
+// Get the last modified date
+const lastModifiedDate = document.lastModified;
+
+// Select the footer paragraphs
+const footerParagraphs = document.querySelectorAll('footer p');
+
+
+// Update the first paragraph with the current year and add a line break
+footerParagraphs[6].innerHTML = `© ${currentYear} 2025 Abia Chamber Of Commerce`;
+
+// Update the third paragraph with the last modified date
+footerParagraphs[7].textContent = `Last modified: ${lastModifiedDate}`;
+
+document.getElementById('menu').addEventListener('click', toggleMenu);
+
+function toggleMenu() {
+    const nav = document.querySelector('.navigation');
+    const menu = document.getElementById('menu');
+    nav.classList.toggle('open');
+    menu.classList.toggle('open');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const weatherApiKey = 'cb9dc7fc689e41f4fe2dd4c5d716b04a'; // Replace with your OpenWeatherMap API key
     const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Abia&appid=${weatherApiKey}&units=metric`;
