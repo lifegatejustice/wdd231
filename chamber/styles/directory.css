@@ -194,6 +194,12 @@ footer {
   width: 10vw;
 }
 
+.hero img {
+  width: 100%; /* Ensures the image stretches to the width of its container */
+  height: auto; /* Maintains the aspect ratio */
+  object-fit: cover; /* Ensures the image looks good even if the container size changes */
+}
+
 @media (min-width: 320px) and (max-width: 426px) {
   .navigation {
     display: none;
@@ -203,6 +209,10 @@ footer {
     padding: 0;
     border-radius: 0;
   }
+
+  .hero {
+    height: 200px; /* Set a specific height to ensure a clean look on small devices */
+}
 
   .extra-switch2 {
     display: none;
@@ -351,6 +361,10 @@ footer {
     margin:20px;
   }
 
+  .hero {
+    height: 300px; /* Slightly larger for tablets */
+}
+
 
 
 }
@@ -362,6 +376,10 @@ footer {
     justify-content: space-between;
     background-color: var(--Primary-Color);
   }
+
+  .hero {
+    height: 500px; /* Larger hero section for desktops */
+}
 
   .extra-switch1 {
     display: none;
