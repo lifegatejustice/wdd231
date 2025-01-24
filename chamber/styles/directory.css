@@ -22,9 +22,82 @@ body {
 
 }
 
-.call-to-action a {
-  background-color: var(--Background-Color);
+ /* Center the button using flexbox */
+ .cta-button {
+  display: flex;
+  justify-content: right;
+  align-items: center; /* Full viewport height */
 }
+
+/* Button styles */
+.cta-button {
+  display: flex;
+  padding: 10px 20px;
+  background-color: var(--white);
+  color: var(--Primary-Color);
+  text-decoration: none;
+  font-size: 1rem;
+
+  font-weight: bold;
+  border: 2px solid var(--amber-yellow);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--lemon-yellow);
+  color: var(--Primary-Color);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:active {
+  background-color: var(--earthy-green);
+  color: var(--Primary-Color);
+}
+
+.overlay{
+  width: 100%;
+  height: auto;
+  filter: brightness(50%); /* Darkens the image */
+}
+
+
+.cta-button {
+  display: flex;
+  justify-content: right;
+  padding: 4vw 10vw;
+  margin: 1vw;
+  width: max-content;
+  font-size: 1rem;
+  color: var(--Primary-Color);
+  
+
+}
+
+.call-to-action-btn {
+position: relative;/* Full viewport height */
+display: flex;
+justify-content: right;
+}
+
+.cta-button {
+position: relative;
+bottom: 35vw; 
+z-index: 3;/* Move to the middle vertically */
+
+}
+
+.call-to-action p, h2{
+  position: relative;
+  bottom: 30vw;
+  margin: 1vw;
+}
+
+
+
+
+
+
 
 #member-list.list-view {
   display: flex;
@@ -60,9 +133,6 @@ body {
   align-items: center;
   margin-left: 1vw;
   margin-right: 1vw;
-
- 
-
 }
 
 .member-card1{
@@ -115,6 +185,7 @@ button{
   margin: 1vw;
   padding: 10px;
 }
+
 button:focus-visible{
   background-color: var(--Primary-Color);
   color: var(--white);
@@ -198,21 +269,66 @@ footer {
   width: 10vw;
 }
 
+header{
+  padding: 0px;
+}
+
 .hero img {
   width: 100%; /* Ensures the image stretches to the width of its container */
-  height: auto; /* Maintains the aspect ratio */
-  object-fit: cover; /* Ensures the image looks good even if the container size changes */
+  height: 70vh; /* Maintains the aspect ratio */
+   /* Ensures the image looks good even if the container size changes */
 }
+
+.cta-button {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: right;
+  padding: 4vw 10vw;
+  margin: 1vw;
+  width: max-content;
+  font-size: 1rem;
+  color: var(--Primary-Color);
+  
+
+}
+
+.call-to-action1{
+  display: flex;
+  flex-direction:column;
+}
+
+.call-to-action-btn {
+position: relative;/* Full viewport height */
+display: flex;
+justify-content: right;
+}
+
+.cta-button {
+position: relative;
+bottom: 35vw; 
+z-index: 3;/* Move to the middle vertically */
+
+}
+
+
+  
+  .overlay{
+    width: 100%;
+    height: auto;
+    filter: brightness(50%); /* Darkens the image */
+  }
 
 @media (min-width: 320px) and (max-width: 426px) {
   .navigation {
     display: none;
     flex-direction: row;
-    position: static;
     background-color: transparent;
     padding: 0;
     border-radius: 0;
   }
+
+  
 
   .hero {
     height: 200px; /* Set a specific height to ensure a clean look on small devices */
@@ -367,6 +483,27 @@ footer {
 
   .hero {
     height: 300px; /* Slightly larger for tablets */
+}
+
+.cta-button {
+  padding: 3vw 8vw;
+  font-size: 1.5rem;
+  color: var(--Primary-Color);
+}
+
+.cta-button {
+position: relative;
+display: flex;
+justify-content: right;
+right: 1vw;
+/* Full viewport height */
+}
+
+.call-to-action-btn{
+position: relative;
+bottom: 45vw; 
+z-index: 3;/* Move to the middle vertically */
+
 }
 
 
