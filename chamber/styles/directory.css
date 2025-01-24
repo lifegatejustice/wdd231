@@ -22,6 +22,71 @@ body {
 
 }
 
+
+/* Spotlight container using Flexbox */
+.spotlight-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Space between items */
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Individual member card */
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Member image styling */
+.member-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Member details */
+.member-details {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.member-details p {
+  margin: 0.5rem 0;
+}
+
+.member-details a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.member-details a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .member-card {
+      width: 100%;
+  }
+}
+
+
  /* Center the button using flexbox */
  .cta-button {
   display: flex;
@@ -82,20 +147,21 @@ justify-content: right;
 
 .cta-button {
 position: relative;
-bottom: 35vw; 
 z-index: 3;/* Move to the middle vertically */
 
 }
 
-.call-to-action p, h2{
+.call-to-action h2{
   position: relative;
-  bottom: 30vw;
+  
   margin: 1vw;
 }
 
-
-
-
+.call-to-action p{
+  position: relative;
+  
+  margin: 1vw;
+}
 
 
 
@@ -257,6 +323,8 @@ footer {
 }
 
 .social-media-icons {
+  display: flex;
+  flex-wrap: wrap;
   margin: 10px 0;
   text-align: left;
   display: flex;
@@ -273,44 +341,45 @@ header{
   padding: 0px;
 }
 
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
 .hero img {
-  width: 100%; /* Ensures the image stretches to the width of its container */
-  height: 70vh; /* Maintains the aspect ratio */
-   /* Ensures the image looks good even if the container size changes */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .cta-button {
-  display: flex;
-  flex-direction: column;
-
-  justify-content: right;
-  padding: 4vw 10vw;
-  margin: 1vw;
-  width: max-content;
-  font-size: 1rem;
-  color: var(--Primary-Color);
-  
-
+  position: absolute;
+  bottom: 20px; /* Adjust distance from the bottom */
+  left: 20px;  /* Adjust distance from the left */
+  background-color: #800E13; /* Button background color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  z-index: 10; /* Ensures the button appears on top of the image */
 }
 
-.call-to-action1{
-  display: flex;
-  flex-direction:column;
+.cta-button:hover {
+  background-color: #AD2831; /* Button hover color */
 }
-
-.call-to-action-btn {
-position: relative;/* Full viewport height */
-display: flex;
-justify-content: right;
-}
-
-.cta-button {
-position: relative;
-bottom: 35vw; 
-z-index: 3;/* Move to the middle vertically */
-
-}
-
 
   
   .overlay{
@@ -318,6 +387,136 @@ z-index: 3;/* Move to the middle vertically */
     height: auto;
     filter: brightness(50%); /* Darkens the image */
   }
+
+  .call-to-action1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 20vw;
+    
+  
+  }
+/* General section styling */
+.current-events, .forecast1, .weather, .company-spotlights {
+  position: relative; /* Make the section a positioning context */
+  margin: 40px auto; /* Add extra space between sections */
+  padding: 20px; /* Inner space for content */
+  margin-left: 10px ; /* Add extra space between sections */
+  margin-right: 10px ; /* Add extra space between sections */
+  background-color: #f9f9f9; /* Light background for sections */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 10px; /* Rounded corners for the section */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a modern shadow */
+  max-width: 1200px; /* Restrict the width of the section */
+  overflow: hidden; /* Ensure no content spills out */
+  
+  
+}
+
+.weather-s{
+  display: flex;
+}
+
+/* H2 heading styling with overlap effect */
+.current-events h2, .weather h2, .forecast1 h2, .company-spotlights h2 {
+  position: relative; /* Position the heading relative to the section */
+  margin: -30px auto 15px auto; /* Negative margin to overlap section */
+  padding: 15px 20px; /* Inner spacing for heading */
+  background-color: var(--black); /* Deep red background for the heading */
+  color: white; /* White text for contrast */
+  border-radius: 8px 8px 0 0; /* Rounded top corners */
+  font-size: 1.5rem; /* Adjust font size */
+  font-family: 'Outfit', sans-serif; /* Stylish font */
+  text-transform: uppercase; /* Uppercase for emphasis */
+  z-index: 10; /* Ensure it overlaps the section */
+  width: calc(100% + 40px); /* Extend the width slightly beyond the section */
+  left: -20px; /* Center it by offsetting */
+  text-align: center; /* Center text inside the heading */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add depth to the heading */
+}
+
+.current-events h2{
+  position: relative; /* Position the heading relative to the section */
+  margin: -30px auto 15px auto; /* Negative margin to overlap section */
+  padding: 15px 20px; /* Inner spacing for heading */
+  background-color: var(--black); /* Deep red background for the heading */
+  color: white; /* White text for contrast */
+  border-radius: 8px 8px 0 0; /* Rounded top corners */
+  font-size: 1.5rem; /* Adjust font size */
+  font-family: 'Outfit', sans-serif; /* Stylish font */
+  text-transform: uppercase; /* Uppercase for emphasis */
+  z-index: 10; /* Ensure it overlaps the section */
+  width: calc(100% + 40px); /* Extend the width slightly beyond the section */
+  left: -20px; /* Center it by offsetting */
+  text-align: center; /* Center text inside the heading */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add depth to the heading */
+
+}
+
+.member-card{
+  position: relative; /* Make the section a positioning context */
+   /* Add extra space between sections */
+  padding: 20px; /* Inner space for content */
+   /* Add extra space between sections */
+  margin-right: 10px ; /* Add extra space between sections */
+  background-color: #f9f9f9; /* Light background for sections */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 10px; /* Rounded corners for the section */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a modern shadow */
+  max-width: 1200px; /* Restrict the width of the section */
+ /* Ensure no content spills out */
+}
+.member-card h3{
+  position: relative; /* Position the heading relative to the section */
+  margin: -30px auto 15px auto; /* Negative margin to overlap section */
+  padding: 15px 30px; /* Inner spacing for heading */
+  background-color: var(--black); /* Deep red background for the heading */
+  color: white; /* White text for contrast */
+  border-radius: 8px 8px 0 0; /* Rounded top corners */
+  font-size: 1.5rem; /* Adjust font size */
+  font-family: 'Outfit', sans-serif; /* Stylish font */
+  text-transform: uppercase; /* Uppercase for emphasis */
+  z-index: 10; /* Ensure it overlaps the section */
+  width: calc(100% + 40px); /* Extend the width slightly beyond the section */
+  left: -20px; /* Center it by offsetting */
+  text-align: center; /* Center text inside the heading */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add depth to the heading */
+}
+/* Optional: Styling for <ul> and <p> inside sections */
+section ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: disc; /* Default bullet points */
+  padding-left: 20px; /* Indentation for bullet points */
+  color: #333; /* Darker text for readability */
+}
+
+.current-events p, .weather p, .company-spotlights p, .forecast1 p {
+  margin: 10px 0;
+  color: #555; /* Softer text color for paragraphs */
+  line-height: 1.6; /* Improve readability */
+  font-family: 'Poppins', sans-serif;
+}
+
+.weather img{
+  width: 30%;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  section {
+      padding: 15px;
+      margin: 20px;
+  }
+
+  section h2 {
+      font-size: 1.3rem;
+      width: calc(100% + 30px); /* Adjust the overlap for smaller screens */
+      left: -15px;
+      text-align: center; /* Center headings on smaller screens */
+  }
+}
 
 @media (min-width: 320px) and (max-width: 426px) {
   .navigation {
@@ -327,6 +526,8 @@ z-index: 3;/* Move to the middle vertically */
     padding: 0;
     border-radius: 0;
   }
+ 
+
 
   
 
@@ -465,13 +666,12 @@ z-index: 3;/* Move to the middle vertically */
   
   }
 
-
 }
 
-@media (min-width: 427px) and (max-width: 768px) {
+@media (min-width: 426px) and (max-width: 768px) {
   #member-list.grid-view {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
     margin-bottom: 2vw;
   
@@ -485,32 +685,15 @@ z-index: 3;/* Move to the middle vertically */
     height: 300px; /* Slightly larger for tablets */
 }
 
-.cta-button {
-  padding: 3vw 8vw;
-  font-size: 1.5rem;
-  color: var(--Primary-Color);
-}
 
-.cta-button {
-position: relative;
-display: flex;
-justify-content: right;
-right: 1vw;
-/* Full viewport height */
-}
 
-.call-to-action-btn{
-position: relative;
-bottom: 45vw; 
-z-index: 3;/* Move to the middle vertically */
 
-}
 
 
 
 }
 
-@media (min-width: 427px) and (max-width: 4000px) {
+@media (min-width: 426px) and (max-width: 1024px) {
   header {
     display: flex;
     align-items: center;
@@ -611,4 +794,227 @@ z-index: 3;/* Move to the middle vertically */
   .footer-contact-info{
     margin-right: 10vw;
   }
+
+
+
+  
+}
+@media (min-width: 1024px) and (max-width: 1440px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--Primary-Color);
+  }
+
+  .hero {
+    height: 500px; /* Larger hero section for desktops */
+}
+
+  .extra-switch1 {
+    display: none;
+  }
+
+  .extra-switch2 img {
+    width: 4vw;
+    height: 10vw;
+  }
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-logo img {
+    width: 10vw;
+    height: 10vw;
+    margin-left: 1vw;
+  }
+
+  .header-logo h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: normal;
+    font-weight: bold;
+  }
+
+  .header-logo p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--white);
+  }
+
+  .navigation {
+    display: grid;
+    grid-column: 2;
+    grid-auto-flow: column;
+    justify-content: center;
+    font-size: 1.5vw;
+    align-items: center;
+    
+  }
+
+  .navigation a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+  }
+
+  .navigation .theme-toggle {
+    margin-left: 20px;
+    font-size: 18px;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  .navigation.open {
+    display: none;
+  }
+
+  .social-media-icons {
+    display: flex;
+    justify-content: center;
+    margin-left: 80px;
+  }
+
+  .social-media-icons img {
+    width: 60px;
+    height: auto;
+  }
+
+  .footer h2 {
+    font-size: 20px;
+  }
+
+  .info{
+    margin-left: 10vw;
+  }
+
+  .footer-contact-info{
+    margin-right: 10vw;
+  }
+
+
+  
+  
+  
+ 
+  
+  
+}
+
+
+@media (min-width: 1440px) and (max-width: 4000px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--Primary-Color);
+  }
+
+  .hero {
+    height: 500px; /* Larger hero section for desktops */
+}
+
+  .extra-switch1 {
+    display: none;
+  }
+
+  .extra-switch2 img {
+    width: 4vw;
+    height: 10vw;
+  }
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-logo img {
+    width: 10vw;
+    height: 10vw;
+    margin-left: 1vw;
+  }
+
+  .header-logo h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: normal;
+    font-weight: bold;
+  }
+
+  .header-logo p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--white);
+  }
+
+  .navigation {
+    display: grid;
+    grid-column: 2;
+    grid-auto-flow: column;
+    justify-content: center;
+    font-size: 1.5vw;
+    align-items: center;
+    
+  }
+
+  .navigation a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+  }
+
+  .navigation .theme-toggle {
+    margin-left: 20px;
+    font-size: 18px;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  .navigation.open {
+    display: none;
+  }
+
+  .social-media-icons {
+    display: flex;
+    justify-content: center;
+    margin-left: 80px;
+  }
+
+  .social-media-icons img {
+    width: 60px;
+    height: auto;
+  }
+
+  .footer h2 {
+    font-size: 20px;
+  }
+
+  .info{
+    margin-left: 10vw;
+  }
+
+  .footer-contact-info{
+    margin-right: 10vw;
+  }
+
+
+  
+
+  
 }
