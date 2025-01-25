@@ -29,11 +29,12 @@ body {
   color: var(--Primary-Color);
   text-decoration: none;
   font-size: 1rem;
-
   font-weight: bold;
   border: 2px solid var(--amber-yellow);
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
 
 .cta-button:hover {
   background-color: var(--lemon-yellow);
@@ -101,11 +102,7 @@ z-index: 3;/* Move to the middle vertically */
 #spotlight-container {
   display: flex;
   flex-direction: row;
-
   justify-content: center;
-  
-  
- 
 }
 
 .member-card {
@@ -365,14 +362,13 @@ header{
   display: flex;
   justify-content: flex-end; 
   position: relative;/* Aligns the button to the right */
-  bottom: 61px;
+  bottom: 0px;
 }
 
 .join-btn {
   background-color: var(--white); /* Example color */
   border: none;
   position: relative;
-  top: ;
   padding: 10px 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -429,7 +425,7 @@ section h2 {
   text-transform: uppercase;
   background-color: var(--Primary-Color);
   position: relative;
-  bottom: 15px;
+  bottom: 24px;
   padding: 10px;
   border-bottom: 2px solid var(--Primary-Color); /* Auburn */
   padding-bottom: 5px;
@@ -476,7 +472,6 @@ section h2 {
 #forecast div {
   font-size: 1.1rem;
   margin: 1vw;
-  
   border-radius: 8px;
   background-color: var(--black);
 }
@@ -484,7 +479,11 @@ section h2 {
 /* Company Spotlights */
 .spotlight-flex-container {
   display: flex;
-  
+}
+
+.hero{
+  height: 500px;
+  overflow: hidden;
 }
 
 .member-card {
@@ -579,6 +578,18 @@ footer p {
   height: auto;
 }
 
+.call-to-action1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 80vw;
+}
+
+.fake-body{
+  position: relative;
+  bottom: 22vh;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
  
@@ -600,12 +611,18 @@ footer p {
     flex-wrap: wrap;
 }
 
-  section h2 {
-    border-bottom: 2px solid var(--Primary-Color); /* Auburn */
-    
-      font-size: 1.1rem;
-      text-align: center; /* Center headings on smaller screens */
-  }
+section h2 {
+  font-size: 1.8rem;
+  color: var(--white);
+  text-transform: uppercase;
+  background-color: var(--Primary-Color);
+  position: relative;
+  bottom: 24px;
+  padding: 10px;
+  border-bottom: 2px solid var(--Primary-Color);
+  padding-bottom: 5px;
+}
+
 }
 
 @media (min-width: 320px) and (max-width: 426px) {
@@ -617,8 +634,11 @@ footer p {
     border-radius: 0;
   }
   
-  
- 
+  .fake-body{
+    position: relative;
+    bottom: 17vh;
+  }
+
 
 
   
@@ -756,6 +776,8 @@ footer p {
   
   }
 
+  
+
 }
 
 @media (min-width: 426px) and (max-width: 768px) {
@@ -787,13 +809,12 @@ footer p {
   flex-direction: column;
   flex-wrap: wrap;
 }
-
-.button-container {
-  display: flex;
-  justify-content: flex-end; 
-  position: relative;/* Aligns the button to the right */
-  bottom: 80px;
-}
+  .button-container {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      bottom: -1px;
+  }
 
 .join-btn {
   background-color: var(--white); /* Example color */
@@ -830,6 +851,14 @@ footer p {
     justify-content: space-between;
     background-color: var(--Primary-Color);
   }
+
+  .call-to-action1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 45vw;
+  }
+ 
 
 
   .extra-switch1 {
@@ -933,6 +962,30 @@ footer p {
     justify-content: space-between;
     background-color: var(--Primary-Color);
   }
+
+  .call-to-action1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 20vw;
+}
+
+.fake-body{
+  position: relative;
+  bottom: 15vh;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  color: var(--white);
+  text-transform: uppercase;
+  background-color: var(--Primary-Color);
+  position: relative;
+  bottom: 20px;
+  padding: 10px;
+  border-bottom: 2px solid var(--Primary-Color);
+  padding-bottom: 5px;
+}
 
 
 
@@ -1043,10 +1096,33 @@ footer p {
     justify-content: space-between;
     background-color: var(--Primary-Color);
   }
+  .call-to-action1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 15vw;
+    margin-left: 1vw;
+  }
+ 
+  .fake-body{
+    position: relative;
+    bottom: 16vh;
+  }
 
-  .hero {
-    height: 500px; /* Larger hero section for desktops */
-}
+  section h2 {
+    font-size: 1.8rem;
+    color: var(--white);
+    text-transform: uppercase;
+    background-color: var(--Primary-Color);
+    position: relative;
+    bottom: 20px;
+    padding: 10px;
+    border-bottom: 2px solid var(--Primary-Color);
+    padding-bottom: 5px;
+  }
+  
+
+
 
   .extra-switch1 {
     display: none;

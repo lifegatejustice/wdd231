@@ -8,7 +8,7 @@
     <meta name="author" content="Lifegate Justice | WDD 131">
 
     <meta property="og:title" content="Chamber Home Page">
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="website">
     <meta property="og:image" content="https://lifegatejustice.github.io/wdd231/chamber/images/ABSG-Coat-of-Arms_Master-2048x1669.png">
     <meta property="og:url" content="https://lifegatejustice.github.io/wdd231/chamber/index.html">
     <meta name="twitter:card" content="summary_large_image">
@@ -60,19 +60,26 @@
     <main>
         <div class="hero">
             <div class="overlay">
-                <img src="images/image.webp" alt="hero image">
+                <picture>
+                    <!--dynamically changed-->
+                    <source media="(min-width: 794px)" srcset="images/image.webp">
+                    <source media="(min-width: 426px)" srcset="images/aba.webp">
+                    <source media="(max-width: 426px)" srcset="images/aba.webp">
+                    <img src="images/aba.webp" alt="hero images">
+                </picture>
             </div>
-            <div class="button-container">
-                <button class="join-btn">
-                    <a href="join.html" class="cta-button">Join Now</a>
-                </button>
-            </div>
+            
         </div>  
             <div class="call-to-action1">
                 <h2>Join the Chamber of Commerce</h2>
                 <p>Become a part of our vibrant community and enjoy exclusive benefits.</p>
+                <div class="button-container">
+                <button class="join-btn">
+                    <a href="join.html" class="cta-button">Join Now</a>
+                </button>
+            </div>
             </div>     
-            
+            <div class="fake-body">
             <div class="first-three">
     
         <section class="current-events">
@@ -110,6 +117,7 @@
         <section id="member-list" class="grid-view">
             <!-- Dynamic content will be inserted here -->
         </section>
+    </div>
     </main>
     
     <footer>
