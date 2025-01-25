@@ -10,82 +10,9 @@
 
 body {
   font-family: var(--Font-Family);
-  background-color: var(--Primary-Color);
+  background-color: var(--Secondary-Color);
   color: var(--Text-Color);
 }
-
-#member-list.grid-view {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 20px;
-  margin-bottom: 2vw;
-
-}
-
-
-/* Spotlight container using Flexbox */
-.spotlight-flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem; /* Space between items */
-  justify-content: center;
-  padding: 1rem;
-}
-
-/* Individual member card */
-.member-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 1rem;
-  width: 300px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.member-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Member image styling */
-.member-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-/* Member details */
-.member-details {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #333;
-}
-
-.member-details p {
-  margin: 0.5rem 0;
-}
-
-.member-details a {
-  color: #007BFF;
-  text-decoration: none;
-}
-
-.member-details a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .member-card {
-      width: 100%;
-  }
-}
-
 
  /* Center the button using flexbox */
  .cta-button {
@@ -130,7 +57,7 @@ body {
 .cta-button {
   display: flex;
   justify-content: right;
-  padding: 4vw 10vw;
+  padding: 0vw 4vw;
   margin: 1vw;
   width: max-content;
   font-size: 1rem;
@@ -153,7 +80,6 @@ z-index: 3;/* Move to the middle vertically */
 
 .call-to-action h2{
   position: relative;
-  
   margin: 1vw;
 }
 
@@ -163,6 +89,80 @@ z-index: 3;/* Move to the middle vertically */
   margin: 1vw;
 }
 
+
+#member-list.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 20px;
+  margin-bottom: 2vw;
+
+}
+
+#spotlight-container {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  
+  
+ 
+}
+
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  background-color: var(--black);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 16px;
+  text-align: center;
+}
+
+.member-card h3 {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 1.4em;
+  color: var(--white);
+}
+
+.member-card .member-description {
+  margin: 0;
+  margin-bottom: 16px;
+  font-size: 1em;
+  color: #666;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Image takes 1 part, details take 2 parts */
+  gap: 16px;
+  width: 100%;
+  align-items: center;
+}
+
+.member-grid img {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 8px;
+}
+
+.business-details {
+  text-align: left;
+}
+
+.business-details p {
+  margin: 4px 68px 29px 0px;
+}
+
+@media (max-width: 600px) {
+  .member-grid {
+      grid-template-columns: 1fr; /* Stack image and details on smaller screens */
+      text-align: center;
+  }
+}
 
 
 #member-list.list-view {
@@ -246,6 +246,7 @@ z-index: 3;/* Move to the middle vertically */
 }
 
 button{
+
   background-color: var(--Secondary-Color);
   border-radius: 3px;
   margin: 1vw;
@@ -344,8 +345,8 @@ header{
 .hero {
   position: relative;
   width: 100%;
-  height: 400px; /* Adjust the height as needed */
-  overflow: hidden;
+  /* Adjust the height as needed */
+ 
 }
 
 .hero img {
@@ -360,22 +361,34 @@ header{
   height: 100%;
 }
 
-.cta-button {
-  position: absolute;
-  bottom: 20px; /* Adjust distance from the bottom */
-  left: 20px;  /* Adjust distance from the left */
-  background-color: #800E13; /* Button background color */
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-  z-index: 10; /* Ensures the button appears on top of the image */
+.button-container {
+  display: flex;
+  justify-content: flex-end; 
+  position: relative;/* Aligns the button to the right */
+  bottom: 61px;
 }
+
+.join-btn {
+  background-color: var(--white); /* Example color */
+  border: none;
+  position: relative;
+  top: ;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.join-btn a {
+  color: var(--Primary-Color);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.join-btn:hover {
+  background-color: #800e13; /* Darker shade on hover */
+}
+
 
 .cta-button:hover {
   background-color: #AD2831; /* Button hover color */
@@ -396,107 +409,170 @@ header{
     
   
   }
-/* General section styling */
-.current-events, .forecast1, .weather, .company-spotlights {
-  position: relative; /* Make the section a positioning context */
-  margin: 40px auto; /* Add extra space between sections */
-  padding: 20px; /* Inner space for content */
-  margin-left: 10px ; /* Add extra space between sections */
-  margin-right: 10px ; /* Add extra space between sections */
-  background-color: #f9f9f9; /* Light background for sections */
-  border: 1px solid #ddd; /* Subtle border */
-  border-radius: 10px; /* Rounded corners for the section */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a modern shadow */
-  max-width: 1200px; /* Restrict the width of the section */
-  overflow: hidden; /* Ensure no content spills out */
+/* General Section Styling */
+.weather, .forecast1, .current-events, .forecast1 {
+  margin: 20px 10px;
+  overflow: hidden;
   
+  text-align: center;
   
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--black);
 }
 
-.weather-s{
+/* Section Headings */
+section h2 {
+ 
+  font-size: 1.8rem;
+  color: var(--white); /* Falu Red */
+  text-transform: uppercase;
+  background-color: var(--Primary-Color);
+  position: relative;
+  bottom: 15px;
+  padding: 10px;
+  border-bottom: 2px solid var(--Primary-Color); /* Auburn */
+  padding-bottom: 5px;
+}
+
+#weather-info{
   display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-/* H2 heading styling with overlap effect */
-.current-events h2, .weather h2, .forecast1 h2, .company-spotlights h2 {
-  position: relative; /* Position the heading relative to the section */
-  margin: -30px auto 15px auto; /* Negative margin to overlap section */
-  padding: 15px 20px; /* Inner spacing for heading */
-  background-color: var(--black); /* Deep red background for the heading */
-  color: white; /* White text for contrast */
-  border-radius: 8px 8px 0 0; /* Rounded top corners */
-  font-size: 1.5rem; /* Adjust font size */
-  font-family: 'Outfit', sans-serif; /* Stylish font */
-  text-transform: uppercase; /* Uppercase for emphasis */
-  z-index: 10; /* Ensure it overlaps the section */
-  width: calc(100% + 40px); /* Extend the width slightly beyond the section */
-  left: -20px; /* Center it by offsetting */
-  text-align: center; /* Center text inside the heading */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add depth to the heading */
-}
 
-.current-events h2{
-  position: relative; /* Position the heading relative to the section */
-  margin: -30px auto 15px auto; /* Negative margin to overlap section */
-  padding: 15px 20px; /* Inner spacing for heading */
-  background-color: var(--black); /* Deep red background for the heading */
-  color: white; /* White text for contrast */
-  border-radius: 8px 8px 0 0; /* Rounded top corners */
-  font-size: 1.5rem; /* Adjust font size */
-  font-family: 'Outfit', sans-serif; /* Stylish font */
-  text-transform: uppercase; /* Uppercase for emphasis */
-  z-index: 10; /* Ensure it overlaps the section */
-  width: calc(100% + 40px); /* Extend the width slightly beyond the section */
-  left: -20px; /* Center it by offsetting */
-  text-align: center; /* Center text inside the heading */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add depth to the heading */
 
-}
-
-.member-card{
-  position: relative; /* Make the section a positioning context */
-   /* Add extra space between sections */
-  padding: 20px; /* Inner space for content */
-   /* Add extra space between sections */
-  margin-right: 10px ; /* Add extra space between sections */
-  background-color: #f9f9f9; /* Light background for sections */
-  border: 1px solid #ddd; /* Subtle border */
-  border-radius: 10px; /* Rounded corners for the section */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a modern shadow */
-  max-width: 1200px; /* Restrict the width of the section */
- /* Ensure no content spills out */
-}
-.member-card h3{
-  position: relative; /* Position the heading relative to the section */
-  margin: -30px auto 15px auto; /* Negative margin to overlap section */
-  padding: 15px 30px; /* Inner spacing for heading */
-  background-color: var(--black); /* Deep red background for the heading */
-  color: white; /* White text for contrast */
-  border-radius: 8px 8px 0 0; /* Rounded top corners */
-  font-size: 1.5rem; /* Adjust font size */
-  font-family: 'Outfit', sans-serif; /* Stylish font */
-  text-transform: uppercase; /* Uppercase for emphasis */
-  z-index: 10; /* Ensure it overlaps the section */
-  width: calc(100% + 40px); /* Extend the width slightly beyond the section */
-  left: -20px; /* Center it by offsetting */
-  text-align: center; /* Center text inside the heading */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add depth to the heading */
-}
-/* Optional: Styling for <ul> and <p> inside sections */
-section ul {
-  margin: 0;
+/* Current Events Section */
+.current-events ul {
+  list-style-type: none;
   padding: 0;
-  list-style-type: disc; /* Default bullet points */
-  padding-left: 20px; /* Indentation for bullet points */
-  color: #333; /* Darker text for readability */
 }
 
-.current-events p, .weather p, .company-spotlights p, .forecast1 p {
+.current-events li {
+  font-size: 1.2rem;
   margin: 10px 0;
-  color: #555; /* Softer text color for paragraphs */
-  line-height: 1.6; /* Improve readability */
-  font-family: 'Poppins', sans-serif;
 }
+
+/* Weather Section */
+.weather-s {
+  display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-direction: row;
+      align-content: flex-start;
+      align-items: flex-start;
+}
+
+#weather-info p {
+  margin: 2vw;
+  font-size: 1.1rem;
+}
+
+/* Forecast Section */
+#forecast div {
+  font-size: 1.1rem;
+  margin: 1vw;
+  
+  border-radius: 8px;
+  background-color: var(--black);
+}
+
+/* Company Spotlights */
+.spotlight-flex-container {
+  display: flex;
+  
+}
+
+.member-card {
+  padding: 15px;
+  background-color: var(--black);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.member-card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the child elements horizontally */
+  text-align: center; /* Ensures text inside is centered */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  background-color: var(--black);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 16px;
+  max-width: 800px;
+}
+
+.member-card h3 {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  color: var(--white);
+  text-align: center; /* Ensures the text is centered */
+  width: 100%; /* Ensures alignment within the card's width */
+}
+
+.member-details p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.member-details a {
+  color: #800e13; /* Falu Red */
+  text-decoration: none;
+}
+
+.member-details a:hover {
+  text-decoration: underline;
+}
+
+.first-three{
+  display: flex;
+  flex-direction: row;
+
+}
+
+/* View Toggle */
+.view-toggle {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.view-toggle button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ad2831; /* Auburn */
+  color: #fff;
+}
+
+.view-toggle button.active {
+  background-color: #800e13; /* Falu Red */
+}
+
+/* Footer Styling */
+footer p {
+  font-size: 0.9rem;
+  color: var(--white);
+  text-align: center;
+}
+
 
 .weather img{
   width: 30%;
@@ -505,15 +581,29 @@ section ul {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  section {
-      padding: 15px;
-      margin: 20px;
+ 
+
+  #spotlight-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  
+    justify-content: center;
+    
+    
+   
   }
 
+  .first-three {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
   section h2 {
-      font-size: 1.3rem;
-      width: calc(100% + 30px); /* Adjust the overlap for smaller screens */
-      left: -15px;
+    border-bottom: 2px solid var(--Primary-Color); /* Auburn */
+    
+      font-size: 1.1rem;
       text-align: center; /* Center headings on smaller screens */
   }
 }
@@ -526,14 +616,14 @@ section ul {
     padding: 0;
     border-radius: 0;
   }
+  
+  
  
 
 
   
 
-  .hero {
-    height: 200px; /* Set a specific height to ensure a clean look on small devices */
-}
+
 
   .extra-switch2 {
     display: none;
@@ -681,8 +771,48 @@ section ul {
     margin:20px;
   }
 
-  .hero {
-    height: 300px; /* Slightly larger for tablets */
+  .call-to-action1 {
+    display: flex
+;
+    flex-direction: column;
+    position: relative;
+    bottom: 38vw;
+    margin-left: 1vw;
+}
+
+
+
+.first-three {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; 
+  position: relative;/* Aligns the button to the right */
+  bottom: 80px;
+}
+
+.join-btn {
+  background-color: var(--white); /* Example color */
+  border: none;
+  position: relative;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.join-btn a {
+  color: var(--Primary-Color);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.join-btn:hover {
+  background-color: #800e13; /* Darker shade on hover */
 }
 
 
@@ -701,9 +831,6 @@ section ul {
     background-color: var(--Primary-Color);
   }
 
-  .hero {
-    height: 500px; /* Larger hero section for desktops */
-}
 
   .extra-switch1 {
     display: none;
@@ -807,9 +934,7 @@ section ul {
     background-color: var(--Primary-Color);
   }
 
-  .hero {
-    height: 500px; /* Larger hero section for desktops */
-}
+
 
   .extra-switch1 {
     display: none;

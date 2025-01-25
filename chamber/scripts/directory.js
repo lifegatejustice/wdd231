@@ -26,7 +26,7 @@ function toggleMenu() {
 document.addEventListener("DOMContentLoaded", async () => {
     const memberListContainer = document.getElementById("member-list");
     const gridViewButton = document.getElementById("grid-view-button");
-    const listViewButton = document.getElementById("list-view-button");n
+    const listViewButton = document.getElementById("list-view-button");
 
     async function fetchMembers() {
         const response = await fetch("data/members.json");

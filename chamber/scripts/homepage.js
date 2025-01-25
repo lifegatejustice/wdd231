@@ -86,14 +86,15 @@ function createMemberCard(member) {
     return `
         <div class="member-card">
             <h3>${member.name}</h3>
-            <img src="${member.image}" alt="${member.name} logo" class="member-image">
-            
-            <div class="member-details">
-                <p><b>Address:</b> ${member.address}</p>
-                <p><b>Phone:</b> ${member.phone}</p>
-                <p><b>Website:</b> <a href="${member.website}" target="_blank">Visit Website</a></p>
-                <p><b>Membership Level:</b> ${["Member", "Silver", "Gold"][member.membershipLevel - 1]}</p>
-                <p class="member-description">${member.description}</p>
+            <p class="member-description">${member.description}</p>
+            <div class="member-grid">
+                <img src="${member.image}" alt="${member.name} logo" class="member-image">
+                <div class="business-details">
+                    <p><b>Address:</b> ${member.address}</p>
+                    <p><b>Phone:</b> ${member.phone}</p>
+                    <p><b>Website:</b> <a href="${member.website}" target="_blank">Visit Website</a></p>
+                    <p><b>Membership Level:</b> ${["Member", "Silver", "Gold"][member.membershipLevel - 1]}</p>
+                </div>
             </div>
         </div>
     `;

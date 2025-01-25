@@ -42,14 +42,6 @@ header {
     background-color: #0056b3;
 }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-}
-
 section {
     background-color: #fff;
     border-radius: 8px;
