@@ -25,7 +25,6 @@ body {
 .cta-button {
   display: flex;
   padding: 10px 20px;
-  background-color: var(--white);
   color: var(--Primary-Color);
   text-decoration: none;
   font-size: 1rem;
@@ -363,6 +362,7 @@ header{
   justify-content: flex-end; 
   position: relative;/* Aligns the button to the right */
   bottom: 0px;
+  margin-left: 4vw;
 }
 
 .join-btn {
@@ -382,12 +382,13 @@ header{
 }
 
 .join-btn:hover {
-  background-color: #800e13; /* Darker shade on hover */
+  background-color: var(--Primary-Color); /* Darker shade on hover */
 }
 
 
 .cta-button:hover {
-  background-color: #AD2831; /* Button hover color */
+  background-color: var(--Primary-Color);
+  color:var(--white); /* Button hover color */
 }
 
   
@@ -530,7 +531,7 @@ section h2 {
 }
 
 .member-details a {
-  color: #800e13; /* Falu Red */
+  color: var(--Primary-Color); /* Falu Red */
   text-decoration: none;
 }
 
@@ -557,12 +558,12 @@ section h2 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #ad2831; /* Auburn */
+  background-color: var(--Primary-Color); /* Auburn */
   color: #fff;
 }
 
 .view-toggle button.active {
-  background-color: #800e13; /* Falu Red */
+  background-color: var(--Primary-Color); /* Falu Red */
 }
 
 /* Footer Styling */
@@ -583,6 +584,7 @@ footer p {
   flex-direction: column;
   position: relative;
   bottom: 80vw;
+  margin: 1vw;
 }
 
 .fake-body{
@@ -833,7 +835,7 @@ section h2 {
 }
 
 .join-btn:hover {
-  background-color: #800e13; /* Darker shade on hover */
+  background-color: var(--Primary-Color); /* Darker shade on hover */
 }
 
 
