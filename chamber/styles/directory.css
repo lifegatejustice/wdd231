@@ -621,12 +621,18 @@ form {
   margin: 5vw;
   overflow: hidden;
   max-width: 600px;
-  margin:auto;
+  margin:2vw;
   padding: 20px;
   background-color: var(--black);
   color: var(--white);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#userInfo{
+  background-color: black;
+  margin: 2vw;
+  padding: 2vw;
 }
 
 label {
@@ -689,6 +695,7 @@ input[type="submit"]:hover {
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   flex: 1 1 calc(33.33% - 20px); /* 3 cards per row, adjusts based on space */
   max-width: 300px; /* Prevents cards from being too wide */
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
   
 }
 
@@ -715,6 +722,30 @@ input[type="submit"]:hover {
 
 .card a:hover {
   background-color: darkgreen;
+}
+
+/* Animation for membership cards */
+@keyframes fadeInScale {
+  0% {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+.membership-cards .card {
+  animation: fadeInScale 0.5s ease forwards;
+  opacity: 0; /* Start hidden */
+  margin: 20px; /* Add some margin for spacing */
+  transition: background-color 0.5s ease; /* Optional background color transition */
+}
+
+/* Optional: Change background color on hover */
+.membership-cards .card:hover {
+  background-color: rgb(59, 58, 58); /* Light gray on hover */
 }
 
 /* Modal Styles */
