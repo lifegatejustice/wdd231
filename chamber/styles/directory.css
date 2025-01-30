@@ -618,7 +618,8 @@ main h1 {
 }
 
 form {
-
+  margin: 5vw;
+  overflow: hidden;
   max-width: 600px;
   margin:auto;
   padding: 20px;
@@ -803,12 +804,6 @@ section h2 {
     bottom: 9vh;
   }
 
-
-
-  
-
-
-
   .extra-switch2 {
     display: none;
   }
@@ -954,6 +949,7 @@ section h2 {
 @media (min-width: 754px) {
   .joingrid{
     display: grid;
+    justify-items: center;
     grid-template-columns: 2fr 1fr;
    
   }
