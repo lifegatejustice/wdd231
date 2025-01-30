@@ -955,12 +955,15 @@ section h2 {
 @media (min-width: 754px) {
   .joingrid{
     display: grid;
-    justify-content: center;
     grid-template-columns: 2fr 1fr;
+   
   }
 
   form{
     grid-column: 1;
+    width: 85%;
+    margin-left: 2vw;
+    margin-right: 2vw;
   }
 
   .membership-cards{
