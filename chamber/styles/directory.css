@@ -669,7 +669,6 @@ input[type="submit"]:hover {
 .membership-cards {
   display: flex;
   flex-wrap: wrap;  /* Allows wrapping to the next line */
-  gap: 20px; /* Adds space between cards */
   justify-content: center; /* Centers the cards */
   padding: 20px;
 
@@ -1274,13 +1273,6 @@ section h2 {
     margin-right: 10vw;
   }
 
-
-  
-  
-  
- 
-  
-  
 }
 
 
