@@ -956,7 +956,7 @@ section h2 {
   .joingrid{
     display: grid;
     justify-content: center;
-    grid-template-columns: 2fr 20 1fr;
+    grid-template-columns: 2fr 1fr;
   }
 
   form{
