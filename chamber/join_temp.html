@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber Directory | Lifegate Justice</title>
+    <meta name="description" content="Chamber of Commerce project by starting with the directory page">
+    <meta name="author" content="Lifegate Justice | WDD 131">
+
+    <meta property="og:title" content="Chamber Directory">
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lifegatejustice.github.io/wdd231/chamber/images/profile.webp">
+    <meta property="og:url" content="https://lifegatejustice.github.io/wdd231/chamber/join.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:description" content="Chamber of Commerce project by starting with the directory page. ">
+    <meta property="og:site_name" content="Chamber Directory">
+    <meta name="twitter:image:alt" content="Profile picture of Lifegate Justice">
+
+    <!--  Non-Essential, But Required for Analytics -->
+    <meta property="fb:app_id" content="laala" />
+    <meta name="twitter:site" content="@laalarts">
+    <link rel="icon" href="favicon.ico">
+    
+    <link rel="stylesheet" href="styles/normalize.css">
+    <script src="scripts/directory.js" defer></script>
+    
+    <link rel="stylesheet" href="styles/directory.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="dark-mode-group">
+                <div class="header-logo">
+                    <a href="directory.html" target="_blank">
+                        <img src="images/ABSG-Coat-of-Arms_Master-2048x1669.svg" alt="Aba Chamber logo" loading="lazy">
+                    </a>
+                    <div>
+                        <h1>Abia</h1>
+                        <h2>Chamber of Commerce</h2>
+                    </div>
+                </div>
+                <div class="extra-switch">
+                </div>
+            </div>
+
+            <div class="extra-switch1">
+                <a href="" target="_blank">
+                    <img src="images/radio_button_partial_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="dark mode/light mode icon">
+                </a>
+            </div>
+        
+            <button id="menu" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+            </button>
+        </div>
+        <nav>
+            <div class="navigation">
+                <p><a href="index.html">Home</a></p>
+                <p><a href="directory.html">Directory</a></p>
+                <p><a href="join.html">Join</a></p>
+                <p><a href="discover.html">Discover</a></p>
+                <div class="extra-switch2">
+                    <a href="" target="_blank">
+                        <img src="images/radio_button_partial_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="dark mode/light mode icon">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Join Our Chamber</h1>
+        <form method="get" action="thankyou.html">
+            <label for="firstName">Applicant's First Name:</label>
+            <input type="text" id="firstName" name="firstName" title="Applicant's First Name" required autocomplete="given-name"><br>
+
+            <label for="lastName">Applicant's Last Name:</label>
+            <input type="text" id="lastName" name="lastName" title="Applicant's Last Name" required autocomplete="family-name"><br>
+
+            <label for="orgTitle">Organizational Title:</label>
+            <input type="text" id="orgTitle" name="orgTitle" title="Organizational Title" pattern="[A-Za-z\s-]{7,}" autocomplete="organization-title"><br>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" title="Email Address" required autocomplete="email" placeholder="example@example.com"><br>
+
+            <label for="phone">Mobile Phone Number:</label>
+            <input type="tel" id="phone" name="phone" title="Mobile Phone Number" required autocomplete="tel"><br>
+
+            <label for="organization">Business/Organization Name:</label>
+            <input type="text" id="organization" name="organization" title="Business/Organization Name" required autocomplete="organization"><br>
+
+            <label for="membership">Membership Level:</label>
+            <select id="membership" name="membership" title="Select Membership Level">
+                <option value="np">NP Membership (No Fee)</option>
+                <option value="bronze">Bronze Membership</option>
+                <option value="silver">Silver Membership</option>
+                <option value="gold">Gold Membership</option>
+            </select><br>
+
+            <label for="description">Business/Organization Description:</label>
+            <textarea id="description" name="description" title="Business/Organization Description"></textarea><br>
+
+            <input type="hidden" id="timestamp" name="timestamp">
+            
+            <input type="submit" value="Submit">
+        </form>
+
+        <script>
+            // Set the current date and time in the hidden timestamp field
+            document.getElementById('timestamp').value = new Date().toISOString();
+        </script>
+    </main>
+
+    <footer>
+        <div class="footer">
+        <div class="footer-contat-info">
+            <h2>Abia Chamber of Commerce</h2>
+            <p>12 Osusu Umueme, Obingwa L. G. A</p>
+            <p>Abia, Mail 999</p>
+            <p>info@abiacc.org</p>
+            <p>(234)8022610771</p>
+        </div>
+
+        <div class="social-media-icons">
+            <a href="http://www.youtube.com" target="_blank"> <img src="images/entypo-social--facebook-with-circle.svg" alt="Youtube Logo"></a>
+            <a href="http://www.x.com" target="_blank"> <img src="images/entypo-social--twitter-with-circle.svg" alt="Twitter Logo"></a>
+            <a href="http://www.linkedin.com" target="_blank"> <img src="images/entypo-social--linkedin-with-circle.svg" alt="LinkedIn Logo"></a>
+        </div>
+
+        <div class="info">
+            <p>WDD231 Class Project</p>
+            <p>Lifegate De-Tom</p>
+            <p></p>
+            <p class="lm">Last Modified: <span id="last-modified"></span></p>
+        </div>
+    </div>
+    </footer>
+</body>
+</html>

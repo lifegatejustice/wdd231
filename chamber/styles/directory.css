@@ -1,17 +1,25 @@
 :root {
   --Primary-Color: green;
   --Secondary-Color: white;
-  --Background-Color: rgb(47, 47, 47);
+  --Background-Color: white;
   --Text-Color: white;
   --Font-Family: Verdana;
   --black: black;
   --white: white;
 }
 
+html, body{
+  width: 100%;
+  overflow-x: hidden;
+
+}
+
 body {
   font-family: var(--Font-Family);
-  background-color: var(--Secondary-Color);
+  background-color: var(--Background-Color);
   color: var(--Text-Color);
+  width: 100%;
+  overflow-x: hidden;
 }
 
  /* Center the button using flexbox */
@@ -111,7 +119,7 @@ z-index: 3;/* Move to the middle vertically */
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #ddd;
+  
   border-radius: 10px;
   padding: 16px;
   background-color: var(--black);
@@ -161,6 +169,10 @@ z-index: 3;/* Move to the middle vertically */
       grid-template-columns: 1fr; /* Stack image and details on smaller screens */
       text-align: center;
   }
+
+  .card {
+    flex: 1 1 100%; /* 1 card per row */
+}
 }
 
 
@@ -179,7 +191,7 @@ z-index: 3;/* Move to the middle vertically */
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
-  border: 5px solid var(--Primary-Color);
+
   padding: 10px;
   border-radius: 8px;
   background: var(--black);
@@ -201,7 +213,6 @@ z-index: 3;/* Move to the middle vertically */
 }
 
 .member-card1{
-  border: 5px solid var(--Primary-Color);
   padding: 10px;
   border-radius: 8px;
   background: var(--black);
@@ -492,7 +503,6 @@ section h2 {
 .member-card {
   padding: 15px;
   background-color: var(--black);
-  border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -509,7 +519,7 @@ section h2 {
   flex-direction: column;
   align-items: center; /* Centers the child elements horizontally */
   text-align: center; /* Ensures text inside is centered */
-  border: 1px solid #ddd;
+  
   border-radius: 10px;
   padding: 16px;
   background-color: var(--black);
@@ -591,7 +601,158 @@ footer p {
 
 .fake-body{
   position: relative;
-  bottom: 22vh;
+  bottom: 9vh;
+}
+
+/* General Styles */
+body {
+  font-family: var(--Font-Family);
+  color: var(--Text-Color);
+  
+}
+
+main h1 {
+  color: var(--Primary-Color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+
+  max-width: 600px;
+  margin:auto;
+  padding: 20px;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 93%;
+  padding: 10px;
+
+  margin-bottom: 15px;
+  border: 1px solid var(--Primary-Color);
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: var(--white);
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  color: var(--white);
+  background-color: var(--Primary-Color);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: darkgreen;
+}
+
+/* Membership Cards */
+.membership-cards {
+  display: flex;
+  flex-wrap: wrap;  /* Allows wrapping to the next line */
+  gap: 20px; /* Adds space between cards */
+  justify-content: center; /* Centers the cards */
+  padding: 20px;
+
+}
+
+.card {
+  background-color: var(--black);
+  border: 1px solid var(--Primary-Color);
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  margin: 2vw;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(33.33% - 20px); /* 3 cards per row, adjusts based on space */
+  max-width: 300px; /* Prevents cards from being too wide */
+  
+}
+
+.card h3 {
+  color: var(--white);
+ padding-bottom: 5px;
+  border-bottom: 1px solid grey;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.card a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--Primary-Color);
+  color: var(--Text-Color);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.card a:hover {
+  background-color: darkgreen;
+}
+
+/* Modal Styles */
+dialog {
+  background-color: var(--Background-Color);
+  border: 1px solid var(--Primary-Color);
+  border-radius: 10px;
+  padding: 20px;
+  color: var(--black);
+  max-width: 500px;
+  width: 90%;
+}
+
+dialog h2 {
+  color: var(--Primary-Color);
+  margin-bottom: 15px;
+}
+
+dialog p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.close:hover {
+  color: var(--Primary-Color);
 }
 
 /* Responsive adjustments */
@@ -640,7 +801,7 @@ section h2 {
   
   .fake-body{
     position: relative;
-    bottom: 17vh;
+    bottom: 9vh;
   }
 
 
@@ -779,11 +940,35 @@ section h2 {
     font-size: 15px;
   
   }
+  form {
+    margin:5vw;
+    overflow: hidden;
+
+  }
 
   
 
 }
 
+
+
+@media (min-width: 754px) {
+  .joingrid{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 2fr 200px 1fr;
+  }
+
+  form{
+    grid-column: 1;
+  }
+
+  .membership-cards{
+    grid-column: 2;
+  }
+
+
+}
 @media (min-width: 426px) and (max-width: 768px) {
   #member-list.grid-view {
     display: grid;
@@ -792,6 +977,9 @@ section h2 {
     margin-bottom: 2vw;
   
   }
+
+ 
+ 
 
   .footer{
     margin:20px;
@@ -976,7 +1164,7 @@ section h2 {
 
 .fake-body{
   position: relative;
-  bottom: 15vh;
+  bottom: 9vh;
 }
 
 section h2 {
@@ -1110,7 +1298,7 @@ section h2 {
  
   .fake-body{
     position: relative;
-    bottom: 16vh;
+    bottom: 9vh;
   }
 
   section h2 {
