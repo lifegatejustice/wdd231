@@ -769,6 +769,12 @@ dialog p {
   line-height: 1.5;
 }
 
+dialog::backdrop {
+  backdrop-filter: blur(5px); /* Applies a blur effect */
+  background: rgba(0, 0, 0, 0.3);
+}
+
+
 .modal-content {
   position: relative;
 }
