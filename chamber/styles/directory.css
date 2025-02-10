@@ -23,26 +23,9 @@ body {
 }
 
 
-.cards{
-  display: flex;
-}
 
 
-.discover-grid {
-  display: grid;
-  grid-template-areas:
-      "visit"
-      "card1"
-      "card2"
-      "card3"
-      "card4"
-      "card5"
-      "card6"
-      "card7"
-      "card8";
-  gap: 1rem;
-  padding: 1rem;
-}
+
 
 .visit-info {
   grid-area: visit;
@@ -77,36 +60,6 @@ body {
   background-color: #0056b3;
 }
 
-
-@media screen and (min-width: 641px) and (max-width: 1024px) {
-  .discover-grid {
-      grid-template-areas:
-          "visit visit"
-          "card1 card2"
-          "card3 card4"
-          "card5 card6"
-          "card7 card8";
-  }
-}
-
-
-
-@media screen and (min-width: 1025px) {
-    .discover-grid {
-        grid-template-areas:
-            "visit visit visit visit"
-            "card1 card2 card3 card4"
-            "card5 card6 card7 card8";
-    }
-
-    .card img {
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .card img:hover {
-        transform: scale(1.05);
-    }
-}
 
 
 
