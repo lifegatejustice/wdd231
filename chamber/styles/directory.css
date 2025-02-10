@@ -22,12 +22,103 @@ body {
   overflow-x: hidden;
 }
 
+
+.cards{
+  display: flex;
+}
+
+
+.discover-grid {
+  display: grid;
+  grid-template-areas:
+      "visit"
+      "card1"
+      "card2"
+      "card3"
+      "card4"
+      "card5"
+      "card6"
+      "card7"
+      "card8";
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.visit-info {
+  grid-area: visit;
+  background-color: var(--black);
+  border: 2px solid var(--Primary-Color);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.card button:hover {
+  background-color: #0056b3;
+}
+
+
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .discover-grid {
+      grid-template-areas:
+          "visit visit"
+          "card1 card2"
+          "card3 card4"
+          "card5 card6"
+          "card7 card8";
+  }
+}
+
+
+
+@media screen and (min-width: 1025px) {
+    .discover-grid {
+        grid-template-areas:
+            "visit visit visit visit"
+            "card1 card2 card3 card4"
+            "card5 card6 card7 card8";
+    }
+
+    .card img {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .card img:hover {
+        transform: scale(1.05);
+    }
+}
+
+
+
+
  /* Center the button using flexbox */
  .cta-button {
   display: flex;
   justify-content: right;
   align-items: center; /* Full viewport height */
 }
+
+
 
 /* Button styles */
 .cta-button {
