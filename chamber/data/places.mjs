@@ -1,5 +1,4 @@
-{
-    "activities": [
+export const places = [
       {
         "name": "National War Museum",
         "address": "Ebite Amafor, Isingwu Autonomous Community, Umuahia North LGA, Abia State.",
@@ -47,7 +46,7 @@
         "address": "Various communities across Abia State.",
         "description": "An annual cultural event celebrating the harvest of new yams with traditional dances, music, and feasting.",
         "cost": "Free to attend; dates vary by community",
-        "photoURL": "https://i.ytimg.com/vi/4l3fL3CYbkk/hqdefault.jpg"
+        "photoURL": "images/abia_state_yam_festival.webp"
       },
       {
         "name": "Umudike Forest Reserve",
@@ -61,15 +60,15 @@
         "address": "Umuahia, Abia State.",
         "description": "An underground bunker used by General Odumegwu Ojukwu during the Nigerian Civil War, now a historical site.",
         "cost": "Included in the National War Museum entry fee",
-        "photoURL": "https://i.ytimg.com/vi/QeSgTOA7SUE/hqdefault.jpg"
+        "photoURL": "images/ojukwu_bunker.webp"
       },
       {
         "name": "Savor Local Cuisine",
         "address": "Local restaurants and eateries across Abia State.",
         "description": "Delight in traditional dishes like Ukazi soup, Abacha (African salad), Isi Ewu (goat head delicacy), and fresh Palm Wine.",
         "cost": "Prices vary by dish and location",
-        "photoURL": "https://www.anaedoonline.ng/wp-content/uploads/2021/05/Abacha.jpg"
+        "photoURL": "images/savor_local_cuisine.webp"
       }
     ]
-  }
+
   

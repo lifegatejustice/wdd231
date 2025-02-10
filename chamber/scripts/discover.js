@@ -24,3 +24,6 @@ function updateVisitInfo() {
 
 // Call the function when the page loads
 document.addEventListener('DOMContentLoaded', updateVisitInfo);
+
+import { places } from '../data/places.mjs';
+console.log(places);
