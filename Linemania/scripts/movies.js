@@ -1,36 +1,34 @@
 // movies.js
-const movieData = [
-    { title: "The Shawshank Redemption", year: 1994, rating: 9.3, image: "shawshank.jpg" },
-    { title: "The Godfather", year: 1972, rating: 9.2, image: "godfather.jpg" },
-    { title: "The Dark Knight", year: 2008, rating: 9.0, image: "dark-knight.jpg" },
-    { title: "12 Angry Men", year: 1957, rating: 8.9, image: "12-angry-men.jpg" },
-    { title: "Schindler's List", year: 1993, rating: 8.9, image: "schindlers-list.jpg" },
-    // Add more movies to meet the 15 item requirement
-];
+const API_KEY = 'd4959a464b2f03274d291417971935f8';
+const BASE_URL = 'https://api.themoviedb.org/3';
+
+async function fetchMovies() {
+    try {
+        const response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data.results.slice(0, 15); // Get the first 15 movies
+    } catch (error) {
+        console.error('Error fetching movies:', error);
+        return [];
+    }
+}
 
 function createMovieCard(movie) {
     const card = document.createElement('div');
     card.className = 'movie-card';
     card.innerHTML = `
-        <img src="images/${movie.image}" alt="${movie.title}" loading="lazy">
+        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" loading="lazy">
         <h3>${movie.title}</h3>
-        <p>Year: ${movie.year}</p>
-        <p>Rating: ${movie.rating}</p>
+        <p>Release Date: ${movie.release_date}</p>
+        <p>Rating: ${movie.vote_average}</p>
+        <p>Popularity: ${movie.popularity}</p>
     `;
+    card.addEventListener('click', () => showMovieDetails(movie));
     return card;
 }
-
-function displayMovies() {
-    const movieList = document.getElementById('movie-list');
-    movieData.forEach(movie => {
-        const card = createMovieCard(movie);
-        movieList.appendChild(card);
-    });
-}
-
-document.addEventListener('DOMContentLoaded', displayMovies);
-
-// movies.js (continued)
 
 function showMovieDetails(movie) {
     const modal = document.createElement('div');
@@ -39,10 +37,11 @@ function showMovieDetails(movie) {
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>${movie.title}</h2>
-            <img src="images/${movie.image}" alt="${movie.title}">
-            <p>Year: ${movie.year}</p>
-            <p>Rating: ${movie.rating}</p>
-            <p>Description: ${movie.description}</p>
+            <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+            <p>Release Date: ${movie.release_date}</p>
+            <p>Rating: ${movie.vote_average}</p>
+            <p>Popularity: ${movie.popularity}</p>
+            <p>Overview: ${movie.overview}</p>
         </div>
     `;
     document.body.appendChild(modal);
@@ -53,19 +52,17 @@ function showMovieDetails(movie) {
     });
 }
 
-function createMovieCard(movie) {
-    const card = document.createElement('div');
-    card.className = 'movie-card';
-    card.innerHTML = `
-        <img src="images/${movie.image}" alt="${movie.title}" loading="lazy">
-        <h3>${movie.title}</h3>
-        <p>Year: ${movie.year}</p>
-        <p>Rating: ${movie.rating}</p>
-    `;
-    card.addEventListener('click', () => showMovieDetails(movie));
-    return card;
+async function displayMovies() {
+    const movies = await fetchMovies();
+    const movieList = document.getElementById('movie-list');
+    movieList.innerHTML = '';
+    movies.forEach(movie => {
+        const card = createMovieCard(movie);
+        movieList.appendChild(card);
+    });
 }
 
+document.addEventListener('DOMContentLoaded', displayMovies);
 
 // movies.js (continued)
 
