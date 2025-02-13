@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/script.js"></script>
+    <script src="scripts/form-submission.js"></script>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
@@ -38,21 +39,5 @@
         <p>&copy; 2023 Linemania. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const formData = document.getElementById('form-data');
-            const params = new URLSearchParams(window.location.search);
-            
-            if (params.has('name') && params.has('email') && params.has('message')) {
-                formData.innerHTML = `
-                    <p><strong>Name:</strong> ${params.get('name')}</p>
-                    <p><strong>Email:</strong> ${params.get('email')}</p>
-                    <p><strong>Message:</strong> ${params.get('message')}</p>
-                `;
-            } else {
-                formData.innerHTML = '<p>No form data submitted.</p>';
-            }
-        });
-    </script>
 </body>
 </html>

@@ -64,25 +64,29 @@ async function displayMovies() {
 
 document.addEventListener('DOMContentLoaded', displayMovies);
 
-// movies.js (continued)
-
-function filterMovies(minRating) {
-    return movieData.filter(movie => movie.rating >= minRating);
+// Implement filtering and sorting functionality
+function filterMovies(movies, minRating) {
+    return movies.filter(movie => movie.vote_average >= minRating);
 }
 
-function sortMovies(sortBy) {
-    return [...movieData].sort((a, b) => {
+function sortMovies(movies, sortBy) {
+    return [...movies].sort((a, b) => {
         if (sortBy === 'year') {
-            return b.year - a.year;
+            return new Date(b.release_date) - new Date(a.release_date);
         } else if (sortBy === 'rating') {
-            return b.rating - a.rating;
+            return b.vote_average - a.vote_average;
         } else {
             return a.title.localeCompare(b.title);
         }
     });
 }
 
-function displayMovies(movies = movieData) {
+// Update the displayMovies function to include filtering and sorting
+async function displayMovies(filterRating = 0, sortBy = 'title') {
+    let movies = await fetchMovies();
+    movies = filterMovies(movies, filterRating);
+    movies = sortMovies(movies, sortBy);
+
     const movieList = document.getElementById('movie-list');
     movieList.innerHTML = '';
     movies.forEach(movie => {
@@ -91,34 +95,66 @@ function displayMovies(movies = movieData) {
     });
 }
 
+// Add event listeners for filter and sort controls
 document.addEventListener('DOMContentLoaded', () => {
     displayMovies();
 
-    const filterSelect = document.createElement('select');
-    filterSelect.innerHTML = `
-        <option value="0">All Ratings</option>
-        <option value="7">7+ Stars</option>
-        <option value="8">8+ Stars</option>
-        <option value="9">9+ Stars</option>
-    `;
-    filterSelect.addEventListener('change', (e) => {
-        const filteredMovies = filterMovies(Number(e.target.value));
-        displayMovies(filteredMovies);
+    const filterSelect = document.getElementById('filter-select');
+    const sortSelect = document.getElementById('sort-select');
+
+    filterSelect.addEventListener('change', () => {
+        const filterRating = Number(filterSelect.value);
+        const sortBy = sortSelect.value;
+        displayMovies(filterRating, sortBy);
     });
 
-    const sortSelect = document.createElement('select');
-    sortSelect.innerHTML = `
-        <option value="title">Sort by Title</option>
-        <option value="year">Sort by Year</option>
-        <option value="rating">Sort by Rating</option>
-    `;
-    sortSelect.addEventListener('change', (e) => {
-        const sortedMovies = sortMovies(e.target.value);
-        displayMovies(sortedMovies);
+    sortSelect.addEventListener('change', () => {
+        const filterRating = Number(filterSelect.value);
+        const sortBy = sortSelect.value;
+        displayMovies(filterRating, sortBy);
     });
-
-    const controlsDiv = document.createElement('div');
-    controlsDiv.appendChild(filterSelect);
-    controlsDiv.appendChild(sortSelect);
-    document.querySelector('main').insertBefore(controlsDiv, document.getElementById('movie-list'));
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.getElementById('main-nav');
+    const hamburger = document.querySelector('.hamburger');
+
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
+    });
+
+    // Close menu when a link is clicked
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        });
+    });
+});
+
+// Implement search functionality
+function searchMovies() {
+    const searchInput = document.getElementById('search-input');
+    const searchQuery = searchInput.value.toLowerCase();
+
+    const movieCards = document.querySelectorAll('.movie-card');
+    movieCards.forEach(card => {
+        const title = card.querySelector('h3').innerText.toLowerCase();
+        if (title.includes(searchQuery)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// dark and light mode functionality
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    darkModeToggle.innerText = body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+}

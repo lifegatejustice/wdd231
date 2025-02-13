@@ -38,3 +38,5 @@ function displayItems(places) {
 
 // Start displaying all items from the imported data
 displayItems(places);
+
+

@@ -212,13 +212,18 @@ select {
     margin-bottom: 1rem;
 }
 
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #222;
+    color: #eee;
+}
+
 /* Dark theme styles */
 body.dark-theme {
     --primary-color: #0A0A14;
     --secondary-color: #0B1021;
     --text-color: #E0E0E0;
 }
-
 /* Form styles */
 form {
     display: flex;
@@ -286,3 +291,152 @@ button[type="submit"] {
         margin-right: 1rem;
     }
 }
+
+
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 20px;
+  }
+  
+  /* Dark Mode Styles */
+body.dark-mode {
+    background-color: #222;
+    color: #eee;
+  }
+  
+  /* Header styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Hamburger menu styling (example) */
+  .hamburger-menu {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: currentColor;
+    margin: 4px 0;
+  }
+  
+  /* Mode toggle button */
+  .mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: inherit;
+  }
+  
+  /* Section styling */
+  .movie-section {
+    margin-bottom: 30px;
+  }
+  
+  .movie-section h2 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  /* Grid layout for movies */
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  
+  /* Movie card styling */
+  .movie-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+  }
+  
+  body.dark-mode .movie-card {
+    background-color: #333;
+    border-color: #444;
+  }
+  
+  .movie-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .movie-card img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  
+  /* Grid layout for genres */
+  .genres-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+  }
+  
+  /* Genre card styling */
+  .genre-card {
+    background-color: #ddd;
+    border-radius: 4px;
+    text-align: center;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .genre-card:hover {
+    background-color: #bbb;
+  }
+  
+  /* Modal styling (if needed) */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    position: relative;
+    border-radius: 6px;
+  }
+  
+  .modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  

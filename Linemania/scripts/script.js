@@ -20,30 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // main.js (continued)
+// Function to toggle dark mode
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle("dark-mode");
 
-// Save and load theme preference
-function saveThemePreference(isDark) {
-    localStorage.setItem('darkTheme', isDark);
-}
-
-function loadThemePreference() {
-    return localStorage.getItem('darkTheme') === 'true';
-}
-
-// Toggle dark theme
-function toggleDarkTheme() {
-    const isDark = document.body.classList.toggle('dark-theme');
-    saveThemePreference(isDark);
-}
-
-// Apply theme on load
-document.addEventListener('DOMContentLoaded', () => {
-    if (loadThemePreference()) {
-        document.body.classList.add('dark-theme');
+    // Save the user's preference in local storage
+    if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
     }
+}
 
-const themeToggle = document.querySelector('theme-toggle');
+// Load the user's preference on page load
+window.onload = function() {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+};
 
-themeToggle.addEventListener('click', toggleDarkTheme);
-document.body.appendChild(themeToggle);
-});
+// Add event listener to the toggle button
+document.getElementById("theme-toggle").addEventListener("click", toggleDarkMode);
