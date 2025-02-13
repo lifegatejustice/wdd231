@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - Linemania</title>
+    <meta name="description" content="Explore our collection of movies on Linemania">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Linemania</h1>
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#" class="user-icon" aria-label="User account"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Movie Collection</h2>
+        <button id="theme-toggle">Toggle Theme</button>
+        <div class="controls">
+            <select id="filter-select">
+                <option value="0">All Ratings</option>
+                <option value="7">7+ Stars</option>
+                <option value="8">8+ Stars</option>
+                <option value="9">9+ Stars</option>
+            </select>
+            <select id="sort-select">
+                <option value="title">Sort by Title</option>
+                <option value="year">Sort by Year</option>
+                <option value="rating">Sort by Rating</option>
+            </select>
+        </div>
+        <div id="movie-list">
+            <!-- Movies will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Linemania. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/script.js" type="module"></script>
+    <script src="scripts/movies.js" type="module"></script>
+</body>
+</html>
