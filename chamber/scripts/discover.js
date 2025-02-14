@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "address": "Umudike, near Michael Okpara University, Umuahia, Abia State.",
             "description": "A tranquil forest reserve ideal for nature walks, bird watching, and studying diverse plant species.",
             "cost": "Free entry; guided tours may have fees",
-            "photoURL": "images/forest.webp"
+            "photoURL": "images/imagesr.webp"
         },
         {
             "name": "Ojukwu Bunker",
