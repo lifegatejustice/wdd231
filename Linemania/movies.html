@@ -7,7 +7,8 @@
         <meta name="description" content="Discover and explore your favorite movies with Linemania">
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="styles/normalize.css">
-        <script src="scripts/script.js"></script>
+        <script src="scripts/script.js" defer></script>
+        <script src="scripts/user-profile.js" defer></script>
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
         <!-- Social media meta tags -->
@@ -29,7 +30,12 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="movies.html">Movies</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="#" class="user-icon" aria-label="User account"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a></li>
+                <li><a href="#" class="user-icon" id="user-icon" aria-label="User account">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a></li>
             </ul>
         </nav>
     </header>

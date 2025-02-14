@@ -9,13 +9,18 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <script src="scripts/script.js" defer ></script>
     <script src="scripts/mode.js" defer></script>
+    <script src="scripts/user-profile.js" defer></script>
     <script src="scripts/indexmov.js" defer></script>
+
+    <script src="scripts/user-profile.js"></script>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+
     <!-- Social media meta tags -->
+
     <meta property="og:title" content="Linemania - Your Ultimate Movie Guide">
     <meta property="og:description" content="Discover and explore your favorite movies with Linemania">
-    <meta property="og:image" content="https://lifegatejustice.github.io/images/linemania-og.jpg">
+    <meta property="og:image" content="https://lifegatejustice.github.io/wdd231/Linemania/images/.jpg">
     <meta property="og:url" content="https://yourdomain.com">
 </head>
 <body>
@@ -26,13 +31,18 @@
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
-        <button id="theme-toggle">Toggle Dark Mode</button>
+        
         <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="movies.html">Movies</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="#" class="user-icon" aria-label="User account"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a></li>
+                <li><a href="#" class="user-icon" id="user-icon" aria-label="User account">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a></li>
             </ul>
         </nav>
     </header>
@@ -42,29 +52,38 @@
         <p>Your ultimate destination for movie information and reviews.</p>
         <!-- Add more content here -->
 
-         <!-- Featured Movies -->
-  <section class="movie-section">
-    <h2>Featured Movies</h2>
-    <div id="featured-list" class="movies-grid">
-      <!-- JavaScript will populate movie cards here -->
-    </div>
-  </section>
-
-  <!-- Genres -->
-  <section class="movie-section">
-    <h2>Genres</h2>
-    <div id="genres-list" class="genres-grid">
-      <!-- JavaScript will populate genre cards here -->
-    </div>
-  </section>
-
-  <!-- Top Rated Movies -->
-  <section class="movie-section">
-    <h2>Top Rated</h2>
-    <div id="top-rated-list" class="movies-grid">
-      <!-- JavaScript will populate movie cards here -->
-    </div>
-  </section>
+        <section class="movie-section">
+            <h2>Featured Movies</h2>
+            <div class="carousel-container">
+                <button class="carousel-button prev" aria-label="Previous movies">❮</button>
+                <div id="featured-list" class="movies-grid carousel">
+                    <!-- JavaScript will populate movie cards here -->
+                </div>
+                <button class="carousel-button next" aria-label="Next movies">❯</button>
+            </div>
+        </section>
+        
+        <section class="movie-section">
+            <h2>Genres</h2>
+            <div class="carousel-container">
+                <button class="carousel-button prev" aria-label="Previous genres">❮</button>
+                <div id="genres-list" class="genres-grid carousel">
+                    <!-- JavaScript will populate genre cards here -->
+                </div>
+                <button class="carousel-button next" aria-label="Next genres">❯</button>
+            </div>
+        </section>
+        
+        <section class="movie-section">
+            <h2>Top Rated</h2>
+            <div class="carousel-container">
+                <button class="carousel-button prev" aria-label="Previous top rated">❮</button>
+                <div id="top-rated-list" class="movies-grid carousel">
+                    <!-- JavaScript will populate movie cards here -->
+                </div>
+                <button class="carousel-button next" aria-label="Next top rated">❯</button>
+            </div>
+        </section>
     </main>
 
     <footer>

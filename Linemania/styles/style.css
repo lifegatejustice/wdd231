@@ -134,7 +134,7 @@ footer {
 }
 
 .movie-card img {
-    width: 100%;
+    width: 150%;
     height: 300px;
     object-fit: cover;
 }
@@ -164,7 +164,7 @@ footer {
 }
 
 .modal-content {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     padding: 2rem;
     border-radius: 8px;
     max-width: 80%;
@@ -212,18 +212,7 @@ select {
     margin-bottom: 1rem;
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #222;
-    color: #eee;
-}
 
-/* Dark theme styles */
-body.dark-theme {
-    --primary-color: #0A0A14;
-    --secondary-color: #0B1021;
-    --text-color: #E0E0E0;
-}
 /* Form styles */
 form {
     display: flex;
@@ -241,8 +230,12 @@ input, textarea {
     margin-top: 0.25rem;
     border-radius: 4px;
     border: 1px solid var(--secondary-color);
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: var(--text-color);
+    color: var(--accent-color);
+}
+
+input[type="email"] {
+    color: var(--accent-color);
 }
 
 button[type="submit"] {
@@ -294,25 +287,8 @@ button[type="submit"] {
 
 
 
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
   
-  /* Body styling */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 20px;
-  }
-  
-  /* Dark Mode Styles */
-body.dark-mode {
-    background-color: #222;
-    color: #eee;
-  }
   
   /* Header styling */
   .header {
@@ -364,19 +340,14 @@ body.dark-mode {
   
   /* Movie card styling */
   .movie-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
     padding: 10px;
     text-align: center;
     transition: box-shadow 0.3s;
     cursor: pointer;
   }
   
-  body.dark-mode .movie-card {
-    background-color: #333;
-    border-color: #444;
-  }
   
   .movie-card:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -384,7 +355,8 @@ body.dark-mode {
   
   .movie-card img {
     max-width: 100%;
-    border-radius: 4px;
+    object-fit: cover;
+    
     margin-bottom: 8px;
   }
   
@@ -395,18 +367,9 @@ body.dark-mode {
     gap: 10px;
   }
   
-  /* Genre card styling */
-  .genre-card {
-    background-color: #ddd;
-    border-radius: 4px;
-    text-align: center;
-    padding: 8px 0;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
   
   .genre-card:hover {
-    background-color: #bbb;
+    background-color: var(--accent-color);
   }
   
   /* Modal styling (if needed) */
@@ -424,7 +387,7 @@ body.dark-mode {
   }
   
   .modal-content {
-    background-color: #fff;
+    background-color: var(--primary-color);
     width: 90%;
     max-width: 600px;
     padding: 20px;
@@ -440,3 +403,189 @@ body.dark-mode {
     cursor: pointer;
   }
   
+
+  /* Add these styles to your style.css file */
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 1rem;
+}
+
+.movies-grid, .genres-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* Hide scrollbar IE and Edge */
+    scrollbar-width: none;     /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.movies-grid::-webkit-scrollbar, 
+.genres-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-card {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.genre-card {
+    flex: 0 0 auto;
+    padding: 1rem;
+    background: var(--secondary-color);
+    border-radius: 8px;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    display: none; /* Hidden by default, shown in media query */
+}
+
+.carousel-button.prev {
+    left: 0;
+}
+
+.carousel-button.next {
+    right: 0;
+}
+
+.carousel-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Show navigation buttons on larger screens */
+@media (min-width: 768px) {
+    .carousel-button {
+        display: block;
+    }
+}
+
+
+/* User Profile Modal Styles */
+.user-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-modal.active {
+    display: flex;
+}
+
+.user-modal-content {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+}
+
+.user-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.user-modal-close {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.user-profile {
+    text-align: center;
+}
+
+.user-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-avatar svg {
+    width: 60px;
+    height: 60px;
+    color: var(--text-color);
+}
+
+.user-info {
+    margin-bottom: 1.5rem;
+}
+
+.user-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.user-action-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.user-action-btn:hover {
+    background-color: #c73850;
+}
+
+.user-preferences {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.preference-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.modal-content img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}

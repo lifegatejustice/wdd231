@@ -171,3 +171,54 @@ document.addEventListener('DOMContentLoaded', async () => {
   await displayGenres();          // Genres
   await displayTopRatedMovies();  // Top Rated
 });
+
+// Add this to your indexmov.js file
+
+function initializeCarousels() {
+    const carousels = document.querySelectorAll('.carousel-container');
+    
+    carousels.forEach(container => {
+        const carousel = container.querySelector('.carousel');
+        const prevButton = container.querySelector('.prev');
+        const nextButton = container.querySelector('.next');
+        
+        let scrollAmount = 0;
+        const scrollStep = 200; // Adjust this value to control scroll distance
+
+        if (prevButton && nextButton) {
+            prevButton.addEventListener('click', () => {
+                scrollAmount = Math.max(scrollAmount - scrollStep, 0);
+                carousel.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+
+            nextButton.addEventListener('click', () => {
+                const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+                scrollAmount = Math.min(scrollAmount + scrollStep, maxScroll);
+                carousel.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Optional: Hide navigation buttons if content fits without scrolling
+        const observer = new ResizeObserver(() => {
+            const shouldShowButtons = carousel.scrollWidth > carousel.clientWidth;
+            prevButton.style.display = shouldShowButtons ? 'block' : 'none';
+            nextButton.style.display = shouldShowButtons ? 'block' : 'none';
+        });
+
+        observer.observe(carousel);
+    });
+}
+
+// Update your DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', async () => {
+    await displayFeaturedMovies();
+    await displayGenres();
+    await displayTopRatedMovies();
+    initializeCarousels(); // Initialize carousels after content is loaded
+});

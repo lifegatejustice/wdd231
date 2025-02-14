@@ -357,6 +357,7 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   background-color: var(--Primary-Color);
+ 
 }
 
 .footer {
@@ -364,6 +365,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+   margin-left: 2vw;
+  margin-right: 2vw;
 }
 
 .footer h1 {
@@ -653,6 +656,10 @@ body {
   font-family: var(--Font-Family);
   color: var(--Text-Color);
   
+}
+
+main{
+  margin-bottom: 20px;
 }
 
 main h1 {
